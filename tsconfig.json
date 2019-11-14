@@ -9,8 +9,7 @@
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
-    "incremental": true,
-    "normalTypeScriptOptions": "here"
+    "incremental": true
   },
   "exclude": ["node_modules", "dist"],
   "typedocOptions": {
