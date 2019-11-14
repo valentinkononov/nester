@@ -8,7 +8,7 @@ import { InMemoryDBModule } from '@nestjs-addons/in-memory-db';
 
 @Module({
   imports: [
-    InMemoryDBModule,
+    InMemoryDBModule.forRoot(),
   ],
   controllers: [
     UserController,

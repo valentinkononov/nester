@@ -49,9 +49,8 @@ export class AuthService {
     return { token };
   }
 
-  async validateUser(payload: Payload): Promise<boolean> {
-    return await this.userService.getByLogin(payload.login)
-      .then(result => !!result);
+  async validateUser(payload: Payload): Promise<User> {
+    return await this.userService.getByLogin(payload.login);
   }
 
   // used in local auth strategy

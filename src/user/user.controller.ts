@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Put, Delete, Body, Param, Req } from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Body, Param, Req, Logger } from '@nestjs/common';
 import { UserService } from './user.service';
 import { User } from './user.interface';
 import { UseGuards } from '@nestjs/common';
@@ -14,6 +14,16 @@ import { RoleGuard } from '../core/guards/role.guard';
 export class UserController {
   constructor(private readonly service: UserService) {}
 
+  // Order of controller methods matters, if 'list' will be the last, it will never be hit because rule is overwritten by :id
+
+  // @Role('admin')
+  // @UseGuards(RoleGuard)
+  @Get('list')
+  async list() {
+    Logger.debug('List called');
+    return await this.service.getAll();
+  }
+
   @Post()
   async create(@Body() user: User) {
     return await this.service.create(user);
@@ -21,6 +31,7 @@ export class UserController {
 
   @Get(':id')
   async getById(@Param() id: number) {
+    Logger.debug('getById called');
     return await this.service.getById(id);
   }
 
@@ -35,10 +46,4 @@ export class UserController {
   async deleteById(@Param() id: number) {
     return await this.service.delete(id);
   }
-
-  @Get('list')
-  async getList() {
-    return await this.service.getAll();
-  }
-
 }

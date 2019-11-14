@@ -9,6 +9,7 @@ import { InMemoryDBService } from '@nestjs-addons/in-memory-db';
 export class UserInMemoryRepository extends UserRepository {
   constructor(private readonly service: InMemoryDBService<User>) {
     super();
+    Logger.debug('UserInMemoryRepository initialized');
   }
 
   async create(user: Partial<User>): Promise<User> {

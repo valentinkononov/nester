@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { User, UserDto } from './user.interface';
 import { UserRepository } from './user.repository';
 
