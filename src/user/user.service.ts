@@ -1,4 +1,4 @@
-import { Injectable, Logger } from '@nestjs/common';
+import { HttpException, Injectable, Logger } from '@nestjs/common';
 import { User, UserDto } from './user.interface';
 import { UserRepository } from './user.repository';
 
@@ -41,7 +41,7 @@ export class UserService {
 
   private mapUserToDto(user: User): UserDto {
     if (!user) {
-      throw new Error('User not created');
+      throw new HttpException('User not created', 500);
     }
     return {
       id: user.id,

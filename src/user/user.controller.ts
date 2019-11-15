@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Put, Delete, Body, Param, Req, Logger } from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Body, Param, Req, Logger, UsePipes, UseInterceptors, UseFilters } from '@nestjs/common';
 import { UserService } from './user.service';
 import { User } from './user.interface';
 import { UseGuards } from '@nestjs/common';
@@ -6,6 +6,9 @@ import { AuthGuard } from '@nestjs/passport';
 import { ApiUseTags, ApiBearerAuth } from '@nestjs/swagger';
 import { Role } from '../core/guards/role.decorator';
 import { RoleGuard } from '../core/guards/role.guard';
+import { LogPipe } from '../core/pipes/log.pipe';
+import { PerformanceInterceptor } from '../core/interceptors/performance.interceptor';
+import { CustomExceptionFilter } from '../core/filters/custom-exception.filter';
 
 @ApiBearerAuth()
 @ApiUseTags('user')
@@ -16,8 +19,8 @@ export class UserController {
 
   // Order of controller methods matters, if 'list' will be the last, it will never be hit because rule is overwritten by :id
 
-  // @Role('admin')
-  // @UseGuards(RoleGuard)
+  @Role('admin')
+  @UseGuards(RoleGuard)
   @Get('list')
   async list() {
     Logger.debug('List called');
@@ -29,6 +32,10 @@ export class UserController {
     return await this.service.create(user);
   }
 
+  @UsePipes(new LogPipe())
+  @UseGuards(RoleGuard)
+  @UseInterceptors(new PerformanceInterceptor('getById'))
+  @UseFilters(new CustomExceptionFilter())
   @Get(':id')
   async getById(@Param() id: number) {
     Logger.debug('getById called');
@@ -41,7 +48,7 @@ export class UserController {
   }
 
   @Role('admin')
-  @UseGuards(RoleGuard)
+  // @UseGuards(RoleGuard)
   @Delete(':id')
   async deleteById(@Param() id: number) {
     return await this.service.delete(id);

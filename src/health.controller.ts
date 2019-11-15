@@ -9,8 +9,8 @@ import { PerformanceInterceptor } from './core/interceptors/performance.intercep
 export class HealthController {
   constructor(private readonly healthService: HealthService) {}
 
-  @UsePipes(new LogPipe())
   @UseInterceptors(new PerformanceInterceptor('status'))
+  @UsePipes(new LogPipe())
   @Get('status')
   getHello(): string {
     return this.healthService.getStatus();
