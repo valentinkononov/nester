@@ -32,5 +32,4 @@ export class AppModule implements NestModule {
       .apply(CustomMiddleware)
       .forRoutes('user');
   }
-
 }

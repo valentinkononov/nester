@@ -29,6 +29,7 @@ async function bootstrap() {
   // turn on global validation
   // app.useGlobalPipes(new ValidationPipe());
   // app.setGlobalPrefix(config.api.root);
+
   initSwagger(app);
   app.use(compression());
 
