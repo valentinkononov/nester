@@ -27,8 +27,9 @@ async function bootstrap() {
   // use Nest-Winston as default logger for API
   app.useLogger(app.get(WINSTON_MODULE_NEST_PROVIDER));
   // turn on global validation
-  // app.useGlobalPipes(new ValidationPipe());
+  app.useGlobalPipes(new ValidationPipe());
   // app.setGlobalPrefix(config.api.root);
+  // app.useGlobalFilters()
 
   initSwagger(app);
   app.use(compression());

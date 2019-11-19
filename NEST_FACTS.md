@@ -109,7 +109,9 @@ app.useGlobalPipes(new ValidationPipe());
 
 5. Controller
 
-6. Exception Filters
+6. Interceptors - part 2
+
+7. Exception Filters
 
  - handle specific exception
  - correct Response
@@ -130,5 +132,3 @@ export class CustomExceptionFilter implements ExceptionFilter {
 // main.ts
 app.useGlobalFilters()
 ```
-
-7. Interceptors - part 2
