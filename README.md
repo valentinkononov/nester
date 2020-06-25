@@ -1,7 +1,9 @@
 <p align="center">
 Nester - backend API template based on
 </p>
-<p align="center">
+<p align="center" style="display: flex; flex-direction: row;">
+  <a href="http://kononov.space" target="blank"><img src="https://github.com/valentinkononov/nester/raw/master/nester-logo.jpg" width="120" alt="Nester" /></a>
+  <span>/</span>
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
 <p align="center">

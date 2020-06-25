@@ -5,6 +5,7 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import * as compression from 'compression';
 import config from './config';
 import { Logger, ValidationPipe } from '@nestjs/common';
+import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
 
 // for hot reload after code change
 declare const module: any;
@@ -21,9 +22,12 @@ function initSwagger(app) {
 }
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule, {
+  const app = await NestFactory.create<NestFastifyApplication>(AppModule, new FastifyAdapter(), {
     cors: true,
   });
+  // const app = await NestFactory.create(AppModule, {
+  //   cors: true,
+  // });
   // use Nest-Winston as default logger for API
   app.useLogger(app.get(WINSTON_MODULE_NEST_PROVIDER));
   // turn on global validation
@@ -34,7 +38,7 @@ async function bootstrap() {
   initSwagger(app);
   app.use(compression());
 
-  await app.listen(config.api.port);
+  await app.listen(Number(config.api.port));
   Logger.debug(`Open api health check at: localhost:${config.api.port}/health/status or swagger at: localhost:${config.api.port}/swagger`);
 }
 bootstrap();
