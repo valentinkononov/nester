@@ -4,6 +4,7 @@ import { User } from './user.interface';
 import { UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiTags, ApiBearerAuth } from '@nestjs/swagger';
+import { SignedUser } from '../auth/signedUser.decorator';
 
 @ApiBearerAuth()
 @ApiTags('me')
@@ -13,12 +14,12 @@ export class MeController {
   constructor(private readonly service: UserService) {}
 
   @Get()
-  async get(@Req() req) {
-    return await this.service.getById(req.user.id);
+  async get(@SignedUser() signedUser) {
+    return await this.service.getById(signedUser.id);
   }
 
   @Put()
-  async update(@Req() req, @Body() user: User) {
-    return await this.service.update(req.user.id, user);
+  async update(@SignedUser() signedUser, @Body() data: User) {
+    return await this.service.update(signedUser.id, data);
   }
 }

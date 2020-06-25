@@ -5,6 +5,7 @@ import { UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiTags } from '@nestjs/swagger';
 import { SignUp } from './interfaces/signUp';
+import { SignedUser } from './signedUser.decorator';
 
 @ApiTags('auth')
 @Controller('auth')
@@ -13,8 +14,8 @@ export class AuthController {
 
   @Post('login')
   @UseGuards(AuthGuard('local'))
-  public async login(@Body() login: Login, @Req() req) {
-    return await this.authService.signIn(req.user);
+  public async login(@Body() login: Login, @SignedUser() user) {
+    return await this.authService.signIn(user);
   }
 
   @Post('sign-up')
