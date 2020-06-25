@@ -1,4 +1,4 @@
-import { ApiModelProperty } from '@nestjs/swagger';
+import { ApiProperty } from '@nestjs/swagger';
 import { InMemoryDBEntity } from '@nestjs-addons/in-memory-db';
 
 /*
@@ -24,12 +24,12 @@ export interface User extends InMemoryDBEntity {
 export class UserDto {
   id: number;
 
-  @ApiModelProperty()
+  @ApiProperty()
   login: string;
 
-  @ApiModelProperty()
+  @ApiProperty()
   email: string;
 
-  @ApiModelProperty()
+  @ApiProperty()
   role: UserRole;
 }

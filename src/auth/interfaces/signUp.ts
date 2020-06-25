@@ -1,13 +1,13 @@
-import { ApiModelProperty } from '@nestjs/swagger';
+import { ApiProperty } from '@nestjs/swagger';
 import { Login } from './login';
 import { IsEmail, IsNotEmpty } from 'class-validator';
 
 export class SignUp extends Login {
   @IsEmail()
-  @ApiModelProperty()
+  @ApiProperty()
   email: string;
 
   @IsNotEmpty()
-  @ApiModelProperty()
+  @ApiProperty()
   confirmPassword: string;
 }

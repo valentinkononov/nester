@@ -3,7 +3,7 @@ import { UserService } from './user.service';
 import { User } from './user.interface';
 import { UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
-import { ApiUseTags, ApiBearerAuth } from '@nestjs/swagger';
+import { ApiTags, ApiBearerAuth } from '@nestjs/swagger';
 import { Role } from '../core/guards/role.decorator';
 import { RoleGuard } from '../core/guards/role.guard';
 import { LogPipe } from '../core/pipes/log.pipe';
@@ -11,7 +11,7 @@ import { PerformanceInterceptor } from '../core/interceptors/performance.interce
 import { CustomExceptionFilter } from '../core/filters/custom-exception.filter';
 
 @ApiBearerAuth()
-@ApiUseTags('user')
+@ApiTags('user')
 @Controller('user')
 @UseGuards(AuthGuard('jwt'))
 export class UserController {
@@ -33,6 +33,7 @@ export class UserController {
   }
 
   @UsePipes(new LogPipe())
+  @Role('user')
   @UseGuards(RoleGuard)
   @UseInterceptors(new PerformanceInterceptor('getById'))
   @UseFilters(new CustomExceptionFilter())

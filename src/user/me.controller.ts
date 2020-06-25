@@ -3,10 +3,10 @@ import { UserService } from './user.service';
 import { User } from './user.interface';
 import { UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
-import { ApiUseTags, ApiBearerAuth } from '@nestjs/swagger';
+import { ApiTags, ApiBearerAuth } from '@nestjs/swagger';
 
 @ApiBearerAuth()
-@ApiUseTags('me')
+@ApiTags('me')
 @Controller('me')
 @UseGuards(AuthGuard('jwt'))
 export class MeController {

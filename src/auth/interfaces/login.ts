@@ -1,12 +1,12 @@
-import { ApiModelProperty } from '@nestjs/swagger';
+import { ApiProperty } from '@nestjs/swagger';
 import { IsNotEmpty } from 'class-validator';
 
 export class Login {
   @IsNotEmpty()
-  @ApiModelProperty()
+  @ApiProperty()
   login: string;
 
   @IsNotEmpty()
-  @ApiModelProperty()
+  @ApiProperty()
   password: string;
 }

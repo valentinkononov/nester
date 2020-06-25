@@ -1,10 +1,10 @@
 import { Controller, Get, UseInterceptors, UsePipes } from '@nestjs/common';
 import { HealthService } from './health.service';
-import { ApiUseTags } from '@nestjs/swagger';
+import { ApiTags } from '@nestjs/swagger';
 import { LogPipe } from './core/pipes/log.pipe';
 import { PerformanceInterceptor } from './core/interceptors/performance.interceptor';
 
-@ApiUseTags('health')
+@ApiTags('health')
 @Controller('health')
 export class HealthController {
   constructor(private readonly healthService: HealthService) {}
