@@ -30,9 +30,6 @@ import config from '../config';
     UserService,
     CryptoService,
   ],
-  exports: [
-    PassportModule,
-    AuthService,
-  ],
+  exports: [PassportModule, AuthService],
 })
 export class AuthModule {}

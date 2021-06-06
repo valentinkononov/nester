@@ -1,10 +1,15 @@
-import { Injectable, NestInterceptor, ExecutionContext, CallHandler, Logger } from '@nestjs/common';
+import {
+  Injectable,
+  NestInterceptor,
+  ExecutionContext,
+  CallHandler,
+  Logger,
+} from '@nestjs/common';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 @Injectable()
 export class PerformanceInterceptor implements NestInterceptor {
-
   private readonly requestTag: string;
 
   constructor(requestTag: string) {
@@ -12,15 +17,13 @@ export class PerformanceInterceptor implements NestInterceptor {
   }
 
   intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
-    Logger.debug('Interceptor started')
+    Logger.debug('Interceptor started');
     const now = Date.now();
-    return next
-      .handle()
-      .pipe(
-        tap(() => {
-          Logger.debug('Interceptor completed')
-          Logger.log(`${this.requestTag} completed in: ${Date.now() - now}ms`)
-        }),
-      );
+    return next.handle().pipe(
+      tap(() => {
+        Logger.debug('Interceptor completed');
+        Logger.log(`${this.requestTag} completed in: ${Date.now() - now}ms`);
+      }),
+    );
   }
 }

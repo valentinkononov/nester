@@ -1,6 +1,18 @@
-import { Controller, Get, Post, Put, Delete, Body, Param, Req, Logger, UsePipes, UseInterceptors, UseFilters } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Put,
+  Delete,
+  Body,
+  Param,
+  Logger,
+  UsePipes,
+  UseInterceptors,
+  UseFilters,
+} from '@nestjs/common';
 import { UserService } from './user.service';
-import { User } from './user.interface';
+import { User, UserDto } from './user.interface';
 import { UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiTags, ApiBearerAuth } from '@nestjs/swagger';
@@ -22,13 +34,13 @@ export class UserController {
   @Role('admin')
   @UseGuards(RoleGuard)
   @Get('list')
-  async list() {
+  async list(): Promise<UserDto[]> {
     Logger.debug('List called');
     return await this.service.getAll();
   }
 
   @Post()
-  async create(@Body() user: User) {
+  async create(@Body() user: User): Promise<UserDto> {
     return await this.service.create(user);
   }
 
@@ -38,20 +50,20 @@ export class UserController {
   @UseInterceptors(new PerformanceInterceptor('getById'))
   @UseFilters(new CustomExceptionFilter())
   @Get(':id')
-  async getById(@Param() id: number) {
+  async getById(@Param() id: string): Promise<UserDto> {
     Logger.debug('getById called');
     return await this.service.getById(id);
   }
 
   @Put(':id')
-  async update(@Param() id: number, @Body() user: User) {
+  async update(@Param() id: string, @Body() user: User): Promise<UserDto> {
     return await this.service.update(id, user);
   }
 
   @Role('admin')
-  // @UseGuards(RoleGuard)
+  @UseGuards(RoleGuard)
   @Delete(':id')
-  async deleteById(@Param() id: number) {
+  async deleteById(@Param() id: string): Promise<void> {
     return await this.service.delete(id);
   }
 }

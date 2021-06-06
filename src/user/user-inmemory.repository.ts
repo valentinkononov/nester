@@ -13,16 +13,16 @@ export class UserInMemoryRepository extends UserRepository {
   }
 
   async create(user: Partial<User>): Promise<User> {
-    return this.service.createAsync(user).toPromise()
-      .then(user => {
+    return this.service
+      .createAsync(user)
+      .toPromise()
+      .then((user) => {
         Logger.debug('user created');
-        const users = this.service.getAll();
-        Logger.debug(users);
         return user;
       });
   }
 
-  async delete(id: number): Promise<void> {
+  async delete(id: string): Promise<void> {
     await this.service.deleteAsync(id);
   }
 
@@ -31,13 +31,15 @@ export class UserInMemoryRepository extends UserRepository {
   }
 
   async getByLogin(login: string): Promise<User | undefined> {
-    return this.service.queryAsync(
-      x => x.login.toLocaleLowerCase() === login.toLocaleLowerCase())
+    return this.service
+      .queryAsync(
+        (x) => x.login.toLocaleLowerCase() === login.toLocaleLowerCase(),
+      )
       .toPromise()
-      .then(result => result && result.length ? result[0] : undefined);
+      .then((result) => (result && result.length ? result[0] : undefined));
   }
 
-  async getById(id: number): Promise<User> {
+  async getById(id: string): Promise<User> {
     return this.service.getAsync(id).toPromise();
   }
 

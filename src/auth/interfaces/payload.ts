@@ -1,8 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 
 export class Payload {
-
-  constructor(id: number, login: string, email: string, role: string) {
+  constructor(id: string, login: string, email: string, role: string) {
     this.id = id;
     this.login = login;
     this.email = email;
@@ -10,7 +9,7 @@ export class Payload {
   }
 
   @ApiProperty()
-  id: number;
+  id: string;
 
   @ApiProperty()
   login: string;

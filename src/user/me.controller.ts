@@ -1,6 +1,6 @@
-import { Controller, Get, Post, Put, Delete, Body, Param, Req } from '@nestjs/common';
+import { Controller, Get, Put, Body } from '@nestjs/common';
 import { UserService } from './user.service';
-import { User } from './user.interface';
+import { User, UserDto } from './user.interface';
 import { UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiTags, ApiBearerAuth } from '@nestjs/swagger';
@@ -14,12 +14,15 @@ export class MeController {
   constructor(private readonly service: UserService) {}
 
   @Get()
-  async get(@SignedUser() signedUser) {
+  async get(@SignedUser() signedUser: User): Promise<UserDto> {
     return await this.service.getById(signedUser.id);
   }
 
   @Put()
-  async update(@SignedUser() signedUser, @Body() data: User) {
+  async update(
+    @SignedUser() signedUser: User,
+    @Body() data: User,
+  ): Promise<UserDto> {
     return await this.service.update(signedUser.id, data);
   }
 }

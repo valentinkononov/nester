@@ -22,7 +22,7 @@ export interface User extends InMemoryDBEntity {
  * Need until new version of nest/swagger is released
  */
 export class UserDto {
-  id: number;
+  id: string;
 
   @ApiProperty()
   login: string;

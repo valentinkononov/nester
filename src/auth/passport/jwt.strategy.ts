@@ -5,6 +5,7 @@ import { Injectable, Logger } from '@nestjs/common';
 import { Payload } from '../interfaces/payload';
 import { Utils } from '../utils';
 import config from '../../config';
+import { User } from '../../user/user.interface';
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
@@ -15,8 +16,8 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     });
   }
 
-  async validate(payload: Payload) {
-    Logger.debug('Validate User')
+  async validate(payload: Payload): Promise<User> {
+    Logger.debug('Validate User');
     const user = await this.authService.validateUser(payload);
     if (!user) {
       throw Utils.UnAuthorizedException;

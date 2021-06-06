@@ -7,13 +7,8 @@ import { MeController } from './me.controller';
 import { InMemoryDBModule } from '@nestjs-addons/in-memory-db';
 
 @Module({
-  imports: [
-    InMemoryDBModule.forRoot(),
-  ],
-  controllers: [
-    UserController,
-    MeController,
-  ],
+  imports: [InMemoryDBModule.forRoot()],
+  controllers: [UserController, MeController],
   providers: [
     UserService,
     // use particular implementation of repository interface

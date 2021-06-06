@@ -1,50 +1,48 @@
-import { UserController } from '../src/user/user.controller';
 import { UserService } from '../src/user/user.service';
-import { User, UserRole } from '../src/user/user.interface';
+import { User } from '../src/user/user.interface';
 import { UserRepository } from '../src/user/user.repository';
 import { Test } from '@nestjs/testing';
 
-const user1 = {
-  id: 1,
+const user1: User = {
+  id: '1',
   login: 'user',
   email: 'user@nester.com',
-  role: 'user' as UserRole,
+  role: 'user',
 };
 
 class UserTestRepository extends UserRepository {
   async getAll(): Promise<User[]> {
-    return Promise.resolve()
-      .then(() => [user1]);
+    return Promise.resolve().then(() => [user1]);
   }
 
-  async create(user: Partial<User>): Promise<User> {
-    return undefined;
+  async create(user: User): Promise<User> {
+    return Promise.resolve(user);
   }
 
-  async delete(id: number): Promise<void> {
-    return undefined;
+  async delete(id: string): Promise<void> {
+    console.log(`Delete: ${id}`);
   }
 
-  async getById(id: number): Promise<User> {
-    return undefined;
+  async getById(id: string): Promise<User> {
+    console.log(`get by id: ${id}`);
+    return user1;
   }
 
   async getByLogin(login: string): Promise<User | undefined> {
+    console.log(`get by login: ${login}`);
     return undefined;
   }
 
   async update(user: Partial<User>): Promise<void> {
-    return undefined;
+    console.log(`update: ${user}`);
   }
 }
 
-describe('UserController', () => {
-  let userController: UserController;
+describe('UseService', () => {
   let userService: UserService;
 
   beforeEach(async () => {
     const module = await Test.createTestingModule({
-      controllers: [UserController],
       providers: [
         UserService,
         { provide: UserRepository, useClass: UserTestRepository },
@@ -52,12 +50,11 @@ describe('UserController', () => {
     }).compile();
 
     userService = module.get<UserService>(UserService);
-    userController = module.get<UserController>(UserController);
   });
 
   describe('getAll', () => {
     it('should return all users in the system', async () => {
-      expect(await userController.list()).toStrictEqual([user1]);
+      expect(await userService.getAll()).toStrictEqual([user1]);
     });
   });
 });

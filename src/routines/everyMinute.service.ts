@@ -3,8 +3,8 @@ import { Cron, CronExpression } from '@nestjs/schedule';
 
 @Injectable()
 export class EveryMinuteService {
-  @Cron(CronExpression.EVERY_5_SECONDS)
-  handleEveryMinuteJob() {
-    Logger.debug(`I was called at: ${new Date()}`);
+  @Cron(CronExpression.EVERY_MINUTE)
+  handleEveryMinuteJob(): void {
+    Logger.debug(`Cron Job was called at: ${new Date()}`);
   }
 }

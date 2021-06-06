@@ -1,21 +1,20 @@
 # Step by Step guide created for GDG Dev fest Gorky 2019
 
-1. Install CLI of nestjs `npm i -g @nestjs/cli` 
+1. Install CLI of nestjs `npm i -g @nestjs/cli`
 
 2. Generate project `nest new new-project`
 
 3. Create modules `auth`, `user`: `nest generate module auth`
 
-4. Setup configuration - 
+4. Setup configuration -
+
 ```shell script
 npm i app-root-path --save
 npm i dotenv --save
-npm i nest-winston --save
-npm i winston --save
 ```
 
- - we will use dotenv, but I don't like idea to call process.NODE_ENV every time
- - setup class config.ts, use process.DOT_ENV there
+- we will use dotenv, but I don't like idea to call process.NODE_ENV every time
+- setup class config.ts, use process.DOT_ENV there
 
 ```javascript
 import * as dotenv from 'dotenv';
@@ -30,45 +29,9 @@ export default {
 ...
 ```
 
- - use it in main.ts
+- use it in main.ts
 
-5. Setup logging
-
-```javascript
-// app.module.ts
-WinstonModule.forRoot(logConfig.winstonOptions),
-```
-
-```javascript
-// log-config.ts
-import * as winston from 'winston';
-import * as appRoot from 'app-root-path';
-import config from './config';
-
-export default {
-  winstonOptions: {
-    transports: [
-      new winston.transports.File({
-        level: config.log.file.level,
-        dirname: `${appRoot}/${config.log.file.dirName}`,
-        filename: config.log.file.fileName,
-        handleExceptions: true,
-        maxsize: config.log.file.maxSize,
-        maxFiles: config.log.file.maxFiles,
-      }),
-      new winston.transports.Console({
-        level: config.log.console.level,
-        handleExceptions: true,
-      }),
-    ],
-    exitOnError: false,
-  },
-};
-```
-
-- from now we can simply use Logger from '@nestjs/common' - and we will have our cool Winston logger
-
-6. Additional Settings
+5. Additional Settings
 
 ```shell script
 npm i compression --save
@@ -79,21 +42,21 @@ npm i compression --save
 app.use(compression());
 ```
 
-7. User Module and in memory data base
+6. User Module and in memory data base
 
- - create user controller / me controller
- - create user interfaces - entities 
- - create user service
- - create abstract repository
- - `InMemoryDBModule.forRoot(),` import into User Module
- - create implementation of it with memory db
- - use `{ provide: UserRepository, useClass: UserInMemoryRepository },` in both provides and exports
+- create user controller / me controller
+- create user interfaces - entities
+- create user service
+- create abstract repository
+- `InMemoryDBModule.forRoot(),` import into User Module
+- create implementation of it with memory db
+- use `{ provide: UserRepository, useClass: UserInMemoryRepository },` in both provides and exports
 
 ```shell script
 npm i @nestjs-addons/in-memory-db --save
 ```
 
-8. Authentication
+7. Authentication
 
 ```shell script
 npm i @nestjs/jwt --save
@@ -103,9 +66,9 @@ npm i passport-jwt --save
 npm i passport-local --save
 ```
 
- - auth controller
- - auth module configuration
- 
+- auth controller
+- auth module configuration
+
 ```javascript
     PassportModule.register({ defaultStrategy: 'jwt' }),
     JwtModule.register({
@@ -117,19 +80,19 @@ npm i passport-local --save
     }),
 ```
 
- - settings in config.ts and .env
- - add strategies for local (login) and jwt - token validation
- - auth service and interfaces
- - add UseGuards for controllers
+- settings in config.ts and .env
+- add strategies for local (login) and jwt - token validation
+- auth service and interfaces
+- add UseGuards for controllers
 
-9. Setup Swagger
+8. Setup Swagger
 
 ```shell script
 npm i @nestjs/swagger --save
 npm i swagger-ui-express --save
 ```
 
- - main.ts setup
+- main.ts setup
 
 ```javascript
 function initSwagger(app) {
@@ -144,31 +107,25 @@ function initSwagger(app) {
 }
 ```
 
- - decorators setup for entities and for controllers
- 
+- decorators setup for entities and for controllers
+
 ```javascript
 @ApiUseTags('auth')
 @ApiBearerAuth()
 @ApiModelProperty()
 ```
- 
- - test swagger
 
-10. Add requests / entities validation
+- test swagger
+
+9. Add requests / entities validation
 
 ```shell script
 npm i class-transformer --save
 npm i class-validator --save
 ```
 
+10. Testing
 
-11. Testing
+- write test for user controller
 
- - write test for user controller
-
-12. Interceptors, guards
-
-    
-    
-    
-    
+11. Interceptors, guards
