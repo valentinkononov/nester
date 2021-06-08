@@ -11,12 +11,12 @@ import { RoutinesModule } from './routines/routines.module';
 const FEATURED_MODULES = [AuthModule, UserModule, RoutinesModule];
 
 @Module({
-  imports: [ScheduleModule.forRoot(), ...FEATURED_MODULES],
-  controllers: [HealthController],
-  providers: [HealthService, Logger],
+    imports: [ScheduleModule.forRoot(), ...FEATURED_MODULES],
+    controllers: [HealthController],
+    providers: [HealthService, Logger],
 })
 export class AppModule implements NestModule {
-  configure(consumer: MiddlewareConsumer): any {
-    consumer.apply(CustomMiddleware).forRoutes('user');
-  }
+    configure(consumer: MiddlewareConsumer): any {
+        consumer.apply(CustomMiddleware).forRoutes('user');
+    }
 }

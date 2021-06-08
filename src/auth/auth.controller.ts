@@ -12,19 +12,19 @@ import { Token } from './interfaces/token';
 @ApiTags('auth')
 @Controller('auth')
 export class AuthController {
-  constructor(private readonly authService: AuthService) {}
+    constructor(private readonly authService: AuthService) {}
 
-  @Post('login')
-  @UseGuards(AuthGuard('local'))
-  public async login(
-    @Body() login: Login,
-    @SignedUser() user: User,
-  ): Promise<Token> {
-    return await this.authService.signIn(user);
-  }
+    @Post('login')
+    @UseGuards(AuthGuard('local'))
+    public async login(
+        @Body() login: Login,
+        @SignedUser() user: User,
+    ): Promise<Token> {
+        return await this.authService.signIn(user);
+    }
 
-  @Post('sign-up')
-  async signUp(@Body() userDto: SignUp): Promise<Token> {
-    return await this.authService.signUp(userDto);
-  }
+    @Post('sign-up')
+    async signUp(@Body() userDto: SignUp): Promise<Token> {
+        return await this.authService.signUp(userDto);
+    }
 }

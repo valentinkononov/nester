@@ -7,20 +7,20 @@ import { User } from '../../user/user.interface';
 
 @Injectable()
 export class LocalStrategy extends PassportStrategy(Strategy) {
-  constructor(private readonly authService: AuthService) {
-    super({
-      usernameField: 'login',
-      passwordField: 'password',
-      passReqToCallback: false,
-    });
-  }
-
-  async validate(login: string, password: string): Promise<User> {
-    Logger.debug('Login ' + login);
-    const user = await this.authService.logIn(login, password);
-    if (!user) {
-      throw Utils.UnAuthorizedException;
+    constructor(private readonly authService: AuthService) {
+        super({
+            usernameField: 'login',
+            passwordField: 'password',
+            passReqToCallback: false,
+        });
     }
-    return user;
-  }
+
+    async validate(login: string, password: string): Promise<User> {
+        Logger.debug('Login ' + login);
+        const user = await this.authService.logIn(login, password);
+        if (!user) {
+            throw Utils.UnAuthorizedException;
+        }
+        return user;
+    }
 }

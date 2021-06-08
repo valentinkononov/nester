@@ -11,18 +11,18 @@ import { SignedUser } from '../auth/signedUser.decorator';
 @Controller('me')
 @UseGuards(AuthGuard('jwt'))
 export class MeController {
-  constructor(private readonly service: UserService) {}
+    constructor(private readonly service: UserService) {}
 
-  @Get()
-  async get(@SignedUser() signedUser: User): Promise<UserDto> {
-    return await this.service.getById(signedUser.id);
-  }
+    @Get()
+    async get(@SignedUser() signedUser: User): Promise<UserDto> {
+        return await this.service.getById(signedUser.id);
+    }
 
-  @Put()
-  async update(
-    @SignedUser() signedUser: User,
-    @Body() data: User,
-  ): Promise<UserDto> {
-    return await this.service.update(signedUser.id, data);
-  }
+    @Put()
+    async update(
+        @SignedUser() signedUser: User,
+        @Body() data: User,
+    ): Promise<UserDto> {
+        return await this.service.update(signedUser.id, data);
+    }
 }

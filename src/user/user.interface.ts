@@ -10,11 +10,11 @@ export type UserRole = 'admin' | 'user';
  * Base User entity, stored in InMemoryDB
  */
 export interface User extends InMemoryDBEntity {
-  password?: string;
-  salt?: string;
-  login: string;
-  email: string;
-  role: UserRole;
+    password?: string;
+    salt?: string;
+    login: string;
+    email: string;
+    role: UserRole;
 }
 
 /*
@@ -22,14 +22,14 @@ export interface User extends InMemoryDBEntity {
  * Need until new version of nest/swagger is released
  */
 export class UserDto {
-  id: string;
+    id: string;
 
-  @ApiProperty()
-  login: string;
+    @ApiProperty()
+    login: string;
 
-  @ApiProperty()
-  email: string;
+    @ApiProperty()
+    email: string;
 
-  @ApiProperty()
-  role: UserRole;
+    @ApiProperty()
+    role: UserRole;
 }

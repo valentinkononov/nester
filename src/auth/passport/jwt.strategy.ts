@@ -9,19 +9,19 @@ import { User } from '../../user/user.interface';
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
-  constructor(private readonly authService: AuthService) {
-    super({
-      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-      secretOrKey: config.auth.jwt.secret,
-    });
-  }
-
-  async validate(payload: Payload): Promise<User> {
-    Logger.debug('Validate User');
-    const user = await this.authService.validateUser(payload);
-    if (!user) {
-      throw Utils.UnAuthorizedException;
+    constructor(private readonly authService: AuthService) {
+        super({
+            jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+            secretOrKey: config.auth.jwt.secret,
+        });
     }
-    return user;
-  }
+
+    async validate(payload: Payload): Promise<User> {
+        Logger.debug('Validate User');
+        const user = await this.authService.validateUser(payload);
+        if (!user) {
+            throw Utils.UnAuthorizedException;
+        }
+        return user;
+    }
 }

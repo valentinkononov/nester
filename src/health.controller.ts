@@ -7,12 +7,12 @@ import { PerformanceInterceptor } from './core/interceptors/performance.intercep
 @ApiTags('health')
 @Controller('health')
 export class HealthController {
-  constructor(private readonly healthService: HealthService) {}
+    constructor(private readonly healthService: HealthService) {}
 
-  @UseInterceptors(new PerformanceInterceptor('status'))
-  @UsePipes(new LogPipe())
-  @Get('status')
-  getHello(): string {
-    return this.healthService.getStatus();
-  }
+    @UseInterceptors(new PerformanceInterceptor('status'))
+    @UsePipes(new LogPipe())
+    @Get('status')
+    getHello(): string {
+        return this.healthService.getStatus();
+    }
 }

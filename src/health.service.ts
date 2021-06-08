@@ -6,7 +6,7 @@ import config from './config';
  */
 @Injectable()
 export class HealthService {
-  getStatus(): string {
-    return `API is working fine ! Version: ${config.api.version}`;
-  }
+    getStatus(): string {
+        return `API is working fine ! Version: ${config.api.version}`;
+    }
 }
