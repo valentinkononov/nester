@@ -1,4 +1,4 @@
-import { Controller, Get, Put, Body } from '@nestjs/common';
+import { Controller, Get, Put, Body, Header } from '@nestjs/common';
 import { UserService } from './user.service';
 import { User, UserDto } from './user.interface';
 import { UseGuards } from '@nestjs/common';
@@ -14,6 +14,7 @@ export class MeController {
     constructor(private readonly service: UserService) {}
 
     @Get()
+    @Header('Content-Type', 'application/json')
     async get(@SignedUser() signedUser: User): Promise<UserDto> {
         return await this.service.getById(signedUser.id);
     }

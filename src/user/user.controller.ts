@@ -11,6 +11,8 @@ import {
     UseInterceptors,
     UseFilters,
     Query,
+    HttpCode,
+    Res,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { User, UserDto } from './user.interface';
@@ -71,5 +73,12 @@ export class UserController {
     @Delete(':id')
     async deleteById(@Param() id: string): Promise<void> {
         return await this.service.delete(id);
+    }
+
+    @HttpCode(501)
+    @Get('not-implemented')
+    async notImplemented(@Res() response: Response): Promise<void> {
+        Logger.debug('Not-Implemented endpoint called');
+        // response.status(501);
     }
 }

@@ -5,13 +5,13 @@ import { LogPipe } from './core/pipes/log.pipe';
 import { PerformanceInterceptor } from './core/interceptors/performance.interceptor';
 
 @ApiTags('health')
-@Controller('health')
+@Controller('')
 export class HealthController {
     constructor(private readonly healthService: HealthService) {}
 
     @UseInterceptors(new PerformanceInterceptor('status'))
     @UsePipes(new LogPipe())
-    @Get('status')
+    @Get('')
     getHello(): string {
         return this.healthService.getStatus();
     }

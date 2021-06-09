@@ -30,16 +30,16 @@ export class AuthService {
                 const password = this.cryptoService.hashPassword(
                     userDto.password,
                 );
-                const user = {
+                const user: User = {
+                    id: undefined,
                     email: userDto.email,
                     login: userDto.login,
                     password: password.hash,
                     salt: password.salt,
-                    role: 'user' as UserRole,
+                    role: 'user',
                 };
 
                 return this.userService.create(user).then((newUser) => {
-                    // const token = this.jwtService.sign(JSON.stringify(this.getTokenPayload(newUser)));
                     const token = this.jwtService.sign(
                         JSON.stringify(this.getTokenPayload(newUser)),
                     );
@@ -62,22 +62,23 @@ export class AuthService {
     // used in local auth strategy
     public async logIn(login: string, password: string): Promise<User> {
         Logger.debug('login');
-        return await this.userService
-            .getByLogin(login)
-            .then((user) => {
-                Logger.debug(user);
-                if (user && user.id) {
-                    return this.cryptoService.checkPassword(
-                        user.password,
-                        user.salt,
-                        password,
-                    )
-                        ? Promise.resolve(user)
-                        : Promise.reject(Utils.UnAuthorizedException);
-                } else {
-                    return Promise.reject(Utils.UnAuthorizedException);
-                }
-            })
-            .catch((err) => Promise.reject(err));
+        const user = await this.userService.getByLogin(login);
+
+        Logger.debug(user);
+        if (user && user.id) {
+            if (
+                this.cryptoService.checkPassword(
+                    user.password,
+                    user.salt,
+                    password,
+                )
+            ) {
+                return user;
+            } else {
+                throw Utils.UnAuthorizedException;
+            }
+        } else {
+            throw Utils.UnAuthorizedException;
+        }
     }
 }

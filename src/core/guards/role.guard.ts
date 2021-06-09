@@ -6,6 +6,7 @@ import {
 } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { Observable } from 'rxjs';
+import { UserDto, UserRole } from '../../user/user.interface';
 
 @Injectable()
 export class RoleGuard implements CanActivate {
@@ -16,13 +17,15 @@ export class RoleGuard implements CanActivate {
     ): boolean | Promise<boolean> | Observable<boolean> {
         Logger.debug('Guard');
         return true;
-        const role = this.reflector.get<string[]>('role', context.getHandler());
-        if (!role) {
+        const roles: UserRole[] = this.reflector.get<UserRole[]>(
+            'role',
+            context.getHandler(),
+        );
+        if (!roles || roles.length === 0) {
             return true;
         }
         const request = context.switchToHttp().getRequest();
-        const user = request.user;
-        const hasRole = (): boolean => user.role === role;
-        return user && user.roles && hasRole();
+        const user: UserDto = request.user;
+        return roles.some((r) => r === user.role);
     }
 }
