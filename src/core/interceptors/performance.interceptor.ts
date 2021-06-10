@@ -19,11 +19,13 @@ export class PerformanceInterceptor implements NestInterceptor {
     intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
         Logger.debug('Interceptor started');
         const now = Date.now();
+        // const user = context.switchToHttp().getRequest().user;
+
         return next.handle().pipe(
             tap(() => {
                 Logger.debug('Interceptor completed');
                 Logger.log(
-                    `${this.requestTag} completed in: ${Date.now() - now}ms`,
+                    `${this.requestTag} completed in: ${Date.now() - now} ms`,
                 );
             }),
         );

@@ -9,11 +9,8 @@ import {
     Logger,
     UsePipes,
     UseInterceptors,
-    UseFilters,
     Query,
     HttpCode,
-    Res,
-    Response,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { User, UserDto } from './user.interface';
@@ -24,9 +21,9 @@ import { Role } from '../core/guards/role.decorator';
 import { RoleGuard } from '../core/guards/role.guard';
 import { LogPipe } from '../core/pipes/log.pipe';
 import { PerformanceInterceptor } from '../core/interceptors/performance.interceptor';
-import { CustomExceptionFilter } from '../core/filters/custom-exception.filter';
 import { ListResponse, Paging } from '../core/interfaces/paging';
 import { QueryObjectPipe } from '../core/pipes/query-object.pipe';
+// import { NumberToDatePipe } from '../core/pipes/number-to-date.pipe';
 
 @ApiBearerAuth()
 @ApiTags('user')
@@ -43,10 +40,21 @@ export class UserController {
     async list(
         @Query('params', new QueryObjectPipe<Paging>())
         params: Paging,
+
+        // @Query('from', NumberToDatePipe)
+        // from: Date,
+
+        // @Query('page')
+        // pageNumber: number,
     ): Promise<ListResponse<UserDto>> {
         Logger.debug('List called');
         return await this.service.getPaged(params);
     }
+
+    // @Post()
+    // async updateBirthday(@Body() birthdayRequest: BirthdayRequest): Promise<void> {
+    //     // do something
+    // }
 
     @Post()
     async create(@Body() user: User): Promise<UserDto> {
@@ -57,12 +65,17 @@ export class UserController {
     @Role('user')
     @UseGuards(RoleGuard)
     @UseInterceptors(new PerformanceInterceptor('getById'))
-    @UseFilters(new CustomExceptionFilter())
     @Get(':id')
+    // http://myapi.com/user/2
     async getById(@Param() id: string): Promise<UserDto> {
         Logger.debug('getById called');
         return await this.service.getById(id);
     }
+
+    // @Get('/custom/:id')
+    // findOne(@Param('id', UserByIdPipe) user: UserDto): UserDto {
+    //     return user;
+    // }
 
     @Put(':id')
     async update(@Param() id: string, @Body() user: User): Promise<UserDto> {
@@ -78,7 +91,7 @@ export class UserController {
 
     @HttpCode(501)
     @Get('not-implemented')
-    async notImplemented(@Res() response: Response): Promise<void> {
+    async notImplemented(/*@Res() response: Response*/): Promise<void> {
         Logger.debug('Not-Implemented endpoint called');
         // response.status(501);
     }

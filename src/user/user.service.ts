@@ -1,9 +1,9 @@
-import { HttpException, Injectable } from '@nestjs/common';
+import { HttpException, Injectable, Scope } from '@nestjs/common';
 import { User, UserDto } from './user.interface';
 import { UserRepository } from './user.repository';
 import { ListResponse, Paging } from '../core/interfaces/paging';
 
-@Injectable()
+@Injectable({ scope: Scope.DEFAULT })
 export class UserService {
     constructor(private readonly repository: UserRepository) {}
 

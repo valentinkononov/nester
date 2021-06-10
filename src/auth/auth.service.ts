@@ -2,7 +2,7 @@ import { JwtService } from '@nestjs/jwt';
 import { Injectable, Logger } from '@nestjs/common';
 import { UserService } from '../user/user.service';
 import { Payload } from './interfaces/payload';
-import { User, UserDto, UserRole } from '../user/user.interface';
+import { User, UserDto } from '../user/user.interface';
 import { CryptoService } from './crypto.service';
 import { SignUp } from './interfaces/signUp';
 import { Token } from './interfaces/token';

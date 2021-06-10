@@ -7,8 +7,9 @@ import { UserModule } from './user/user.module';
 import { CustomMiddleware } from './core/middleware/custom.middleware';
 import { ScheduleModule } from '@nestjs/schedule';
 import { RoutinesModule } from './routines/routines.module';
+import { CarModule } from './car/car.module';
 
-const FEATURED_MODULES = [AuthModule, UserModule, RoutinesModule];
+const FEATURED_MODULES = [AuthModule, UserModule, CarModule, RoutinesModule];
 
 @Module({
     imports: [ScheduleModule.forRoot(), ...FEATURED_MODULES],

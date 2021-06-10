@@ -31,7 +31,7 @@ async function bootstrap(): Promise<void> {
     // turn on global validation
     app.useGlobalPipes(new ValidationPipe());
 
-    app.useGlobalFilters(new CustomExceptionFilter());
+    app.useGlobalFilters(new CustomExceptionFilter(app));
 
     app.use(compression());
     app.use(bodyParser.json({ limit: '1mb' }));

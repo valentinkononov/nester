@@ -21,3 +21,8 @@ import { InMemoryDBModule } from '@nestjs-addons/in-memory-db';
     ],
 })
 export class UserModule {}
+
+@Module({
+    imports: [UserModule],
+})
+export class OtherModule {}

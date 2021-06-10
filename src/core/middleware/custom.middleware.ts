@@ -1,4 +1,4 @@
-import { Injectable, Logger, NestMiddleware } from '@nestjs/common';
+import { Injectable, Logger, NestMiddleware, Request } from '@nestjs/common';
 
 @Injectable()
 export class CustomMiddleware implements NestMiddleware {
