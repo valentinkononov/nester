@@ -13,6 +13,7 @@ import {
     Query,
     HttpCode,
     Res,
+    Response,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { User, UserDto } from './user.interface';
