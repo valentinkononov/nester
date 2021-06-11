@@ -12,7 +12,10 @@ import { InMemoryDBModule } from '@nestjs-addons/in-memory-db';
     providers: [
         UserService,
         // use particular implementation of repository interface
-        { provide: UserRepository, useClass: UserInMemoryRepository },
+        {
+            provide: UserRepository,
+            useClass: UserInMemoryRepository,
+        },
     ],
     exports: [
         UserService,

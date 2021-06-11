@@ -9,7 +9,7 @@ export interface QueryObjectPipeOptions<V> {
 export class QueryObjectPipe<V> implements PipeTransform<string> {
     constructor(private options: QueryObjectPipeOptions<V> = {}) {}
 
-    transform(value: string): any {
+    transform(value: string): unknown {
         try {
             if (value) {
                 return JSON.parse(value);

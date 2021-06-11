@@ -17,6 +17,18 @@ export class CarService {
         };
     }
 
+    async sell(numberPlate: string): Promise<boolean> {
+        const cars = await this.repository.getAvailableList();
+        const carToSell = cars.find((car) => car.numberPlate === numberPlate);
+        if (carToSell) {
+            carToSell.isSold = true;
+            await this.repository.update(carToSell);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     async getAvailableCars(): Promise<CarDto[]> {
         const cars = await this.repository.getAvailableList();
         return cars.map((car) => {

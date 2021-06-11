@@ -1,11 +1,6 @@
-import {
-    IsDateString,
-    IsIn,
-    IsNotEmpty,
-    IsPositive,
-    MinDate,
-} from 'class-validator';
+import { IsDate, IsIn, IsNotEmpty, IsPositive, MinDate } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
+import { Type } from 'class-transformer';
 
 export class CarDto {
     @ApiProperty()
@@ -23,12 +18,14 @@ export class CarDto {
 
     // @ValidateIf(o => o.otherProperty === 'value')
     @ApiProperty()
-    @IsDateString()
+    @IsDate()
+    @Type(() => Date)
     @MinDate(new Date(2000, 1, 1))
     dateProduced: Date;
 
     @ApiProperty()
-    @IsDateString()
+    @IsDate()
+    @Type(() => Date)
     dateAdded: Date;
 }
 

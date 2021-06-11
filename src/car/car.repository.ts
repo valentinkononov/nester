@@ -10,6 +10,10 @@ export class CarRepository {
         return this.service.createAsync(car).toPromise();
     }
 
+    async update(car: Car): Promise<void> {
+        return this.service.updateAsync(car).toPromise();
+    }
+
     async markAsSold(id: string): Promise<Car> {
         const current = await this.service.get(id);
         if (current) {

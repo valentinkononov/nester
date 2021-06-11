@@ -15,6 +15,7 @@ export class MeController {
 
     @Get()
     @Header('Content-Type', 'application/json')
+    @Header('Cache-Control', 'min-...=10202 .... ')
     async get(@SignedUser() signedUser: User): Promise<UserDto> {
         return await this.service.getById(signedUser.id);
     }

@@ -1,6 +1,6 @@
-// import { NumberToDatePipe } from '../core/pipes/number-to-date.pipe';
+// import { NumberPlatePipe } from '../core/pipes/number-to-date.pipe';
 //
 // export class BirthdayRequest {
-//     @NumberToDatePipe()
+//     @NumberPlatePipe()
 //     birthdayDate: Date;
 // }

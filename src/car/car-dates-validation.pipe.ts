@@ -9,6 +9,11 @@ export class CarDatesValidationPipe
         if (value.dateAdded >= value.dateProduced) {
             return value;
         }
+
+        if (value.dateProduced >= new Date(2000, 1, 1)) {
+            return value;
+        }
+
         throw new Error('[Validation]: dateAdded is less than dateProduced');
     }
 }

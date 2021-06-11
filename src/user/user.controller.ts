@@ -9,7 +9,6 @@ import {
     Logger,
     UsePipes,
     UseInterceptors,
-    Query,
     HttpCode,
 } from '@nestjs/common';
 import { UserService } from './user.service';
@@ -22,8 +21,6 @@ import { RoleGuard } from '../core/guards/role.guard';
 import { LogPipe } from '../core/pipes/log.pipe';
 import { PerformanceInterceptor } from '../core/interceptors/performance.interceptor';
 import { ListResponse, Paging } from '../core/interfaces/paging';
-import { QueryObjectPipe } from '../core/pipes/query-object.pipe';
-// import { NumberToDatePipe } from '../core/pipes/number-to-date.pipe';
 
 @ApiBearerAuth()
 @ApiTags('user')
@@ -38,10 +35,10 @@ export class UserController {
     @UseGuards(RoleGuard)
     @Get('list')
     async list(
-        @Query('params', new QueryObjectPipe<Paging>())
+        // @Query('params', QueryObjectPipe)
         params: Paging,
 
-        // @Query('from', NumberToDatePipe)
+        // @Query('from', NumberPlatePipe)
         // from: Date,
 
         // @Query('page')
@@ -93,6 +90,5 @@ export class UserController {
     @Get('not-implemented')
     async notImplemented(/*@Res() response: Response*/): Promise<void> {
         Logger.debug('Not-Implemented endpoint called');
-        // response.status(501);
     }
 }

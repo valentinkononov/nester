@@ -29,7 +29,7 @@ async function bootstrap(): Promise<void> {
     });
 
     // turn on global validation
-    app.useGlobalPipes(new ValidationPipe());
+    app.useGlobalPipes(new ValidationPipe({ transform: true }));
 
     app.useGlobalFilters(new CustomExceptionFilter(app));
 
