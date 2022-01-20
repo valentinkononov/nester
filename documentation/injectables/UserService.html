@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
 
@@ -36,9 +37,10 @@
 
 
 
+
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li>UserService</li>
+  <li >UserService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -62,6 +64,7 @@
 
 
 
+
             <section>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
@@ -78,36 +81,42 @@
                             <li>
                                     <span class="modifier">Public</span>
                                     <span class="modifier">Async</span>
-                                <a href="#create">create</a>
+                                <a href="#create" >create</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
                                     <span class="modifier">Async</span>
-                                <a href="#delete">delete</a>
+                                <a href="#delete" >delete</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
                                     <span class="modifier">Async</span>
-                                <a href="#getAll">getAll</a>
+                                <a href="#getAll" >getAll</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
                                     <span class="modifier">Async</span>
-                                <a href="#getById">getById</a>
+                                <a href="#getById" >getById</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
                                     <span class="modifier">Async</span>
-                                <a href="#getByLogin">getByLogin</a>
+                                <a href="#getByLogin" >getByLogin</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getPaged" >getPaged</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#mapUserToDto">mapUserToDto</a>
+                                    <span class="modifier">Static</span>
+                                <a href="#mapUserToDto" >mapUserToDto</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
                                     <span class="modifier">Async</span>
-                                <a href="#update">update</a>
+                                <a href="#update" >update</a>
                             </li>
                         </ul>
                     </td>
@@ -127,12 +136,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(repository: <a href="../interfaces/User.html">UserRepository</a>)</code>
+<code>constructor(repository: <a href="../interfaces/User.html" target="_self">UserRepository</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">src/user/user.service.ts:6</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/user/user.service.ts:7</a></div>
                             </td>
                         </tr>
 
@@ -181,11 +190,9 @@
                 <td class="col-md-4">
                     <a name="create"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            <span class="modifier">Async</span>
-                            create
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>create</b></span>
                         <a href="#create"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -193,7 +200,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>create(user: <a href="../interfaces/User.html">Partial<User></a>)</code>
+                    <code>create(user: <a href="../interfaces/User.html" target="_self">Partial&lt;User&gt;</a>)</code>
                 </td>
             </tr>
 
@@ -211,6 +218,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -254,11 +262,9 @@
                 <td class="col-md-4">
                     <a name="delete"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            <span class="modifier">Async</span>
-                            delete
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>delete</b></span>
                         <a href="#delete"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -266,15 +272,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>delete(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    <code>delete(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">src/user/user.service.ts:38</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/user/user.service.ts:53</a></div>
                 </td>
             </tr>
 
@@ -284,6 +290,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -296,7 +303,7 @@
                                 <tr>
                                     <td>id</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
 
                                     <td>
@@ -327,11 +334,9 @@
                 <td class="col-md-4">
                     <a name="getAll"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            <span class="modifier">Async</span>
-                            getAll
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>getAll</b></span>
                         <a href="#getAll"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -346,8 +351,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/user/user.service.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/user/user.service.ts:22</a></div>
                 </td>
             </tr>
 
@@ -369,11 +374,9 @@
                 <td class="col-md-4">
                     <a name="getById"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            <span class="modifier">Async</span>
-                            getById
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>getById</b></span>
                         <a href="#getById"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -381,15 +384,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    <code>getById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/user/user.service.ts:15</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="16"
+                            class="link-to-prism">src/user/user.service.ts:16</a></div>
                 </td>
             </tr>
 
@@ -399,6 +402,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -411,7 +415,7 @@
                                 <tr>
                                     <td>id</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
 
                                     <td>
@@ -442,11 +446,9 @@
                 <td class="col-md-4">
                     <a name="getByLogin"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            <span class="modifier">Async</span>
-                            getByLogin
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>getByLogin</b></span>
                         <a href="#getByLogin"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -461,8 +463,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="28"
-                            class="link-to-prism">src/user/user.service.ts:28</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">src/user/user.service.ts:42</a></div>
                 </td>
             </tr>
 
@@ -472,6 +474,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -513,28 +516,27 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="mapUserToDto"></a>
+                    <a name="getPaged"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            mapUserToDto
-                        </b>
-                        <a href="#mapUserToDto"><span class="icon ion-ios-link"></span></a>
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>getPaged</b></span>
+                        <a href="#getPaged"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>mapUserToDto(user: <a href="../interfaces/User.html">User</a>)</code>
+                    <code>getPaged(paging: <a href="../interfaces/Paging.html" target="_self">Paging</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="42"
-                            class="link-to-prism">src/user/user.service.ts:42</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/user/user.service.ts:32</a></div>
                 </td>
             </tr>
 
@@ -544,6 +546,79 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>paging</td>
+                                    <td>
+                                                <code><a href="../interfaces/Paging.html" target="_self" >Paging</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/UserDto.html" target="_self" >Promise&lt;ListResponse&lt;UserDto&gt;&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapUserToDto"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span class="modifier">Static</span>
+                        <span ><b>mapUserToDto</b></span>
+                        <a href="#mapUserToDto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mapUserToDto(user: <a href="../interfaces/User.html" target="_self">User</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/user/user.service.ts:57</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -587,11 +662,9 @@
                 <td class="col-md-4">
                     <a name="update"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            <span class="modifier">Async</span>
-                            update
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>update</b></span>
                         <a href="#update"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -599,15 +672,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>update(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, user: <a href="../interfaces/User.html">User</a>)</code>
+                    <code>update(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, user: <a href="../interfaces/User.html" target="_self">User</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/user/user.service.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/user/user.service.ts:46</a></div>
                 </td>
             </tr>
 
@@ -617,6 +690,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -629,7 +703,7 @@
                                 <tr>
                                     <td>id</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
 
                                     <td>
@@ -672,58 +746,73 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpException, Injectable, Logger } from &#x27;@nestjs/common&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpException, Injectable } from &#x27;@nestjs/common&#x27;;
 import { User, UserDto } from &#x27;./user.interface&#x27;;
 import { UserRepository } from &#x27;./user.repository&#x27;;
+import { ListResponse, Paging } from &#x27;../core/interfaces/paging&#x27;;
 
 @Injectable()
 export class UserService {
+    constructor(private readonly repository: UserRepository) {}
 
-  constructor(private readonly repository: UserRepository) {}
-
-  public async create(user: Partial&lt;User&gt;): Promise&lt;UserDto&gt; {
-    return this.repository.create(user)
-      .then(result &#x3D;&gt; this.mapUserToDto(result));
-  }
-
-  public async getById(id: number): Promise&lt;UserDto&gt; {
-    return this.repository.getById(id)
-      .then(result &#x3D;&gt; this.mapUserToDto(result));
-  }
-
-  public async getAll(): Promise&lt;UserDto[]&gt; {
-    return  this.repository.getAll()
-      .then(result &#x3D;&gt; result &amp;&amp; result.length
-        ? result.map(user &#x3D;&gt; this.mapUserToDto(user))
-        : []);
-  }
-
-  // used for internal API purposes, returns straight User object from Data Source
-  public async getByLogin(login: string): Promise&lt;User | undefined&gt; {
-    return this.repository.getByLogin(login);
-  }
-
-  public async update(id: number, user: User): Promise&lt;UserDto&gt; {
-    user.id &#x3D; id;
-    return this.repository.update(user)
-      .then(() &#x3D;&gt; this.mapUserToDto(user));
-  }
-
-  public async delete(id: number): Promise&lt;void&gt; {
-    await this.repository.delete(id);
-  }
-
-  private mapUserToDto(user: User): UserDto {
-    if (!user) {
-      throw new HttpException(&#x27;User not created&#x27;, 500);
+    public async create(user: Partial&lt;User&gt;): Promise&lt;UserDto&gt; {
+        return this.repository
+            .create(user)
+            .then((result) &#x3D;&gt; UserService.mapUserToDto(result));
     }
-    return {
-      id: user.id,
-      login: user.login,
-      email: user.email,
-      role: user.role,
-    };
-  }
+
+    public async getById(id: string): Promise&lt;UserDto&gt; {
+        return this.repository
+            .getById(id)
+            .then((result) &#x3D;&gt; UserService.mapUserToDto(result));
+    }
+
+    public async getAll(): Promise&lt;UserDto[]&gt; {
+        return this.repository
+            .getAll()
+            .then((result) &#x3D;&gt;
+                result &amp;&amp; result.length
+                    ? result.map((user) &#x3D;&gt; UserService.mapUserToDto(user))
+                    : [],
+            );
+    }
+
+    public async getPaged(paging: Paging): Promise&lt;ListResponse&lt;UserDto&gt;&gt; {
+        return this.repository.getPaged(paging).then((result) &#x3D;&gt; {
+            return {
+                data: result.data.map((user) &#x3D;&gt; UserService.mapUserToDto(user)),
+                itemsCount: result.itemsCount,
+            };
+        });
+    }
+
+    // used for internal API purposes, returns straight User object from Data Source
+    public async getByLogin(login: string): Promise&lt;User | undefined&gt; {
+        return this.repository.getByLogin(login);
+    }
+
+    public async update(id: string, user: User): Promise&lt;UserDto&gt; {
+        user.id &#x3D; id;
+        return this.repository
+            .update(user)
+            .then(() &#x3D;&gt; UserService.mapUserToDto(user));
+    }
+
+    public async delete(id: string): Promise&lt;void&gt; {
+        await this.repository.delete(id);
+    }
+
+    private static mapUserToDto(user: User): UserDto {
+        if (!user) {
+            throw new HttpException(&#x27;User not created&#x27;, 500);
+        }
+        return {
+            id: user.id,
+            login: user.login,
+            email: user.email,
+            role: user.role,
+        };
+    }
 }
 </code></pre>
     </div>
@@ -736,14 +825,14 @@ export class UserService {
 
 
 
-                   
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -755,6 +844,15 @@ export class UserService {
            </div>
        </div>
 
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
@@ -764,9 +862,9 @@ export class UserService {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

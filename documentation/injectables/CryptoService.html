@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
 
@@ -36,9 +37,10 @@
 
 
 
+
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li>CryptoService</li>
+  <li >CryptoService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -62,6 +64,7 @@
 
 
 
+
             <section>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
@@ -77,15 +80,16 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#checkPassword">checkPassword</a>
+                                <a href="#checkPassword" >checkPassword</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#getHash">getHash</a>
+                                    <span class="modifier">Static</span>
+                                <a href="#getHash" >getHash</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#hashPassword">hashPassword</a>
+                                <a href="#hashPassword" >hashPassword</a>
                             </li>
                         </ul>
                     </td>
@@ -111,10 +115,8 @@
                 <td class="col-md-4">
                     <a name="checkPassword"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            checkPassword
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span ><b>checkPassword</b></span>
                         <a href="#checkPassword"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -140,6 +142,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -207,10 +210,9 @@
                 <td class="col-md-4">
                     <a name="getHash"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            getHash
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span class="modifier">Static</span>
+                        <span ><b>getHash</b></span>
                         <a href="#getHash"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -225,8 +227,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/auth/crypto.service.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="21"
+                            class="link-to-prism">src/auth/crypto.service.ts:21</a></div>
                 </td>
             </tr>
 
@@ -236,6 +238,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -275,7 +278,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                     </div>
                     <div class="io-description">
@@ -291,10 +294,8 @@
                 <td class="col-md-4">
                     <a name="hashPassword"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            hashPassword
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span ><b>hashPassword</b></span>
                         <a href="#hashPassword"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -320,6 +321,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -347,7 +349,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>{ salt: any; hash: any; }</code>
+                        <b>Returns : </b>    <code>literal type</code>
 
                     </div>
                     <div class="io-description">
@@ -368,20 +370,24 @@ import { Injectable } from &#x27;@nestjs/common&#x27;;
 
 @Injectable()
 export class CryptoService {
-  public hashPassword(password: string) {
-    const salt &#x3D; randomBytes(32).toString(&#x27;hex&#x27;);
-    const hash &#x3D; this.getHash(password, salt);
-    return { salt, hash };
-  }
+    public hashPassword(password: string): { salt: string; hash: string } {
+        const salt &#x3D; randomBytes(32).toString(&#x27;hex&#x27;);
+        const hash &#x3D; CryptoService.getHash(password, salt);
+        return { salt, hash };
+    }
 
-  public checkPassword(originalHash: string, salt: string, candidatePassword: string) {
-    const hash &#x3D; this.getHash(candidatePassword, salt);
-    return (hash &#x3D;&#x3D;&#x3D; originalHash);
-  }
+    public checkPassword(
+        originalHash: string,
+        salt: string,
+        candidatePassword: string,
+    ): boolean {
+        const hash &#x3D; CryptoService.getHash(candidatePassword, salt);
+        return hash &#x3D;&#x3D;&#x3D; originalHash;
+    }
 
-  private getHash(password: string, salt: string) {
-    return pbkdf2Sync(password, salt, 1024, 32, &#x27;sha512&#x27;).toString(&#x27;hex&#x27;);
-  }
+    private static getHash(password: string, salt: string): string {
+        return pbkdf2Sync(password, salt, 1024, 32, &#x27;sha512&#x27;).toString(&#x27;hex&#x27;);
+    }
 }
 </code></pre>
     </div>
@@ -394,14 +400,14 @@ export class CryptoService {
 
 
 
-                   
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -413,6 +419,15 @@ export class CryptoService {
            </div>
        </div>
 
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
@@ -422,9 +437,9 @@ export class CryptoService {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
 
@@ -36,7 +37,7 @@
 
 <ol class="breadcrumb">
   <li>Controllers</li>
-  <li>UserController</li>
+  <li >UserController</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -68,6 +69,7 @@
 
 
 
+
             <section>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
@@ -83,23 +85,23 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#create">create</a>
+                                <a href="#create" >create</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#deleteById">deleteById</a>
+                                <a href="#deleteById" >deleteById</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#getById">getById</a>
+                                <a href="#getById" >getById</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#list">list</a>
+                                <a href="#list" >list</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#update">update</a>
+                                <a href="#update" >update</a>
                             </li>
                         </ul>
                     </td>
@@ -124,10 +126,8 @@
                 <td class="col-md-4">
                     <a name="create"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Async</span>
-                            create
-                        </b>
+                        <span class="modifier">Async</span>
+                        <span ><b>create</b></span>
                         <a href="#create"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -135,7 +135,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>create(user: <a href="../interfaces/User.html">User</a>)</code>
+                    <code>create(user: <a href="../interfaces/User.html" target="_self">User</a>)</code>
                 </td>
             </tr>
 
@@ -149,8 +149,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/user/user.controller.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/user/user.controller.ts:49</a></div>
                 </td>
             </tr>
 
@@ -160,6 +160,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -187,7 +188,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>{}</code>
+                        <b>Returns : </b>        <code><a href="../interfaces/User.html" target="_self" >Promise&lt;UserDto&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -203,10 +204,8 @@
                 <td class="col-md-4">
                     <a name="deleteById"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Async</span>
-                            deleteById
-                        </b>
+                        <span class="modifier">Async</span>
+                        <span ><b>deleteById</b></span>
                         <a href="#deleteById"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -214,7 +213,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>deleteById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    <code>deleteById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
@@ -222,14 +221,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Role(&#x27;admin&#x27;)<br />@Delete(&#x27;:id&#x27;)<br /></code>
+                    <code>@Role(&#x27;admin&#x27;)<br />@UseGuards(RoleGuard)<br />@Delete(&#x27;:id&#x27;)<br /></code>
                 </td>
             </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="53"
-                            class="link-to-prism">src/user/user.controller.ts:53</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/user/user.controller.ts:72</a></div>
                 </td>
             </tr>
 
@@ -239,6 +238,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -251,7 +251,7 @@
                                 <tr>
                                     <td>id</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
 
                                     <td>
@@ -266,7 +266,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>{}</code>
+                        <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
 
                     </div>
                     <div class="io-description">
@@ -282,10 +282,8 @@
                 <td class="col-md-4">
                     <a name="getById"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Async</span>
-                            getById
-                        </b>
+                        <span class="modifier">Async</span>
+                        <span ><b>getById</b></span>
                         <a href="#getById"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -293,7 +291,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    <code>getById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
@@ -301,7 +299,85 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@UsePipes(new LogPipe())<br />@UseGuards(RoleGuard)<br />@UseInterceptors(new PerformanceInterceptor())<br />@UseFilters(new CustomExceptionFilter())<br />@Get(&#x27;:id&#x27;)<br /></code>
+                    <code>@UsePipes(new LogPipe())<br />@Role(&#x27;user&#x27;)<br />@UseGuards(RoleGuard)<br />@UseInterceptors(new PerformanceInterceptor())<br />@UseFilters(new CustomExceptionFilter())<br />@Get(&#x27;:id&#x27;)<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/user/user.controller.ts:59</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/User.html" target="_self" >Promise&lt;UserDto&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="list"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>list</b></span>
+                        <a href="#list"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>list(params: <a href="../interfaces/Paging.html" target="_self">Paging</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Role(&#x27;admin&#x27;)<br />@UseGuards(RoleGuard)<br />@Get(&#x27;list&#x27;)<br /></code>
                 </td>
             </tr>
 
@@ -318,6 +394,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -328,9 +405,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>id</td>
+                                    <td>params</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                <code><a href="../interfaces/Paging.html" target="_self" >Paging</a></code>
                                     </td>
 
                                     <td>
@@ -345,7 +422,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>{}</code>
+                        <b>Returns : </b>        <code><a href="../classes/UserDto.html" target="_self" >Promise&lt;ListResponse&lt;UserDto&gt;&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -359,60 +436,10 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="list"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Async</span>
-                            list
-                        </b>
-                        <a href="#list"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>list()</code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@Role(&#x27;admin&#x27;)<br />@UseGuards(RoleGuard)<br />@Get(&#x27;list&#x27;)<br /></code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/user/user.controller.ts:25</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>{}</code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
                     <a name="update"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Async</span>
-                            update
-                        </b>
+                        <span class="modifier">Async</span>
+                        <span ><b>update</b></span>
                         <a href="#update"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -420,7 +447,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>update(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, user: <a href="../interfaces/User.html">User</a>)</code>
+                    <code>update(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, user: <a href="../interfaces/User.html" target="_self">User</a>)</code>
                 </td>
             </tr>
 
@@ -434,8 +461,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="46"
-                            class="link-to-prism">src/user/user.controller.ts:46</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">src/user/user.controller.ts:65</a></div>
                 </td>
             </tr>
 
@@ -445,6 +472,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -457,7 +485,7 @@
                                 <tr>
                                     <td>id</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
 
                                     <td>
@@ -484,7 +512,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>{}</code>
+                        <b>Returns : </b>        <code><a href="../interfaces/User.html" target="_self" >Promise&lt;UserDto&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -498,61 +526,80 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Controller, Get, Post, Put, Delete, Body, Param, Req, Logger, UsePipes, UseInterceptors, UseFilters } from &#x27;@nestjs/common&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    Controller,
+    Get,
+    Post,
+    Put,
+    Delete,
+    Body,
+    Param,
+    Logger,
+    UsePipes,
+    UseInterceptors,
+    UseFilters,
+    Query,
+} from &#x27;@nestjs/common&#x27;;
 import { UserService } from &#x27;./user.service&#x27;;
-import { User } from &#x27;./user.interface&#x27;;
+import { User, UserDto } from &#x27;./user.interface&#x27;;
 import { UseGuards } from &#x27;@nestjs/common&#x27;;
 import { AuthGuard } from &#x27;@nestjs/passport&#x27;;
-import { ApiUseTags, ApiBearerAuth } from &#x27;@nestjs/swagger&#x27;;
+import { ApiTags, ApiBearerAuth } from &#x27;@nestjs/swagger&#x27;;
 import { Role } from &#x27;../core/guards/role.decorator&#x27;;
 import { RoleGuard } from &#x27;../core/guards/role.guard&#x27;;
 import { LogPipe } from &#x27;../core/pipes/log.pipe&#x27;;
 import { PerformanceInterceptor } from &#x27;../core/interceptors/performance.interceptor&#x27;;
 import { CustomExceptionFilter } from &#x27;../core/filters/custom-exception.filter&#x27;;
+import { ListResponse, Paging } from &#x27;../core/interfaces/paging&#x27;;
+import { QueryObjectPipe } from &#x27;../core/pipes/query-object.pipe&#x27;;
 
 @ApiBearerAuth()
-@ApiUseTags(&#x27;user&#x27;)
+@ApiTags(&#x27;user&#x27;)
 @Controller(&#x27;user&#x27;)
 @UseGuards(AuthGuard(&#x27;jwt&#x27;))
 export class UserController {
-  constructor(private readonly service: UserService) {}
+    constructor(private readonly service: UserService) {}
 
-  // Order of controller methods matters, if &#x27;list&#x27; will be the last, it will never be hit because rule is overwritten by :id
+    // Order of controller methods matters, if &#x27;list&#x27; will be the last, it will never be hit because rule is overwritten by :id
 
-  @Role(&#x27;admin&#x27;)
-  @UseGuards(RoleGuard)
-  @Get(&#x27;list&#x27;)
-  async list() {
-    Logger.debug(&#x27;List called&#x27;);
-    return await this.service.getAll();
-  }
+    @Role(&#x27;admin&#x27;)
+    @UseGuards(RoleGuard)
+    @Get(&#x27;list&#x27;)
+    async list(
+        @Query(&#x27;params&#x27;, new QueryObjectPipe&lt;Paging&gt;())
+        params: Paging,
+    ): Promise&lt;ListResponse&lt;UserDto&gt;&gt; {
+        Logger.debug(&#x27;List called&#x27;);
+        return await this.service.getPaged(params);
+    }
 
-  @Post()
-  async create(@Body() user: User) {
-    return await this.service.create(user);
-  }
+    @Post()
+    async create(@Body() user: User): Promise&lt;UserDto&gt; {
+        return await this.service.create(user);
+    }
 
-  @UsePipes(new LogPipe())
-  @UseGuards(RoleGuard)
-  @UseInterceptors(new PerformanceInterceptor(&#x27;getById&#x27;))
-  @UseFilters(new CustomExceptionFilter())
-  @Get(&#x27;:id&#x27;)
-  async getById(@Param() id: number) {
-    Logger.debug(&#x27;getById called&#x27;);
-    return await this.service.getById(id);
-  }
+    @UsePipes(new LogPipe())
+    @Role(&#x27;user&#x27;)
+    @UseGuards(RoleGuard)
+    @UseInterceptors(new PerformanceInterceptor(&#x27;getById&#x27;))
+    @UseFilters(new CustomExceptionFilter())
+    @Get(&#x27;:id&#x27;)
+    async getById(@Param() id: string): Promise&lt;UserDto&gt; {
+        Logger.debug(&#x27;getById called&#x27;);
+        return await this.service.getById(id);
+    }
 
-  @Put(&#x27;:id&#x27;)
-  async update(@Param() id: number, @Body() user: User) {
-    return await this.service.update(id, user);
-  }
+    @Put(&#x27;:id&#x27;)
+    async update(@Param() id: string, @Body() user: User): Promise&lt;UserDto&gt; {
+        return await this.service.update(id, user);
+    }
 
-  @Role(&#x27;admin&#x27;)
-  // @UseGuards(RoleGuard)
-  @Delete(&#x27;:id&#x27;)
-  async deleteById(@Param() id: number) {
-    return await this.service.delete(id);
-  }
+    @Role(&#x27;admin&#x27;)
+    @UseGuards(RoleGuard)
+    @Delete(&#x27;:id&#x27;)
+    async deleteById(@Param() id: string): Promise&lt;void&gt; {
+        return await this.service.delete(id);
+    }
 }
 </code></pre>
     </div>
@@ -566,14 +613,15 @@ export class UserController {
 
 
 
-                   
+
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -585,6 +633,15 @@ export class UserController {
            </div>
        </div>
 
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'controller';
@@ -594,9 +651,9 @@ export class UserController {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

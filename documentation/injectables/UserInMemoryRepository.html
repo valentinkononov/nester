@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
 
@@ -36,9 +37,10 @@
 
 
 
+
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li>UserInMemoryRepository</li>
+  <li >UserInMemoryRepository</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -58,6 +60,7 @@
         <p class="comment">
             <code>src/user/user-inmemory.repository.ts</code>
         </p>
+
 
 
             <p class="comment">
@@ -83,57 +86,31 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#create">create</a>
+                                <a href="#create" >create</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#delete">delete</a>
+                                <a href="#delete" >delete</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#getAll">getAll</a>
+                                <a href="#getAll" >getAll</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#getById">getById</a>
+                                <a href="#getById" >getById</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#getByLogin">getByLogin</a>
+                                <a href="#getByLogin" >getByLogin</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#update">update</a>
+                                <a href="#getPaged" >getPaged</a>
                             </li>
                             <li>
-                                    <span class="modifier">Abstract</span>
                                     <span class="modifier">Async</span>
-                                <a href="#create">create</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Abstract</span>
-                                    <span class="modifier">Async</span>
-                                <a href="#delete">delete</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Abstract</span>
-                                    <span class="modifier">Async</span>
-                                <a href="#getAll">getAll</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Abstract</span>
-                                    <span class="modifier">Async</span>
-                                <a href="#getById">getById</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Abstract</span>
-                                    <span class="modifier">Async</span>
-                                <a href="#getByLogin">getByLogin</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Abstract</span>
-                                    <span class="modifier">Async</span>
-                                <a href="#update">update</a>
+                                <a href="#update" >update</a>
                             </li>
                         </ul>
                     </td>
@@ -153,12 +130,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(service: <a href="../interfaces/User.html">InMemoryDBService<User></a>)</code>
+<code>constructor(service: <a href="../interfaces/User.html" target="_self">InMemoryDBService&lt;User&gt;</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/user/user-inmemory.repository.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/user/user-inmemory.repository.ts:10</a></div>
                             </td>
                         </tr>
 
@@ -207,10 +184,8 @@
                 <td class="col-md-4">
                     <a name="create"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Async</span>
-                            create
-                        </b>
+                        <span class="modifier">Async</span>
+                        <span ><b>create</b></span>
                         <a href="#create"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -218,15 +193,21 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>create(user: <a href="../interfaces/User.html">Partial<User></a>)</code>
+                    <code>create(user: <a href="../interfaces/User.html" target="_self">Partial&lt;User&gt;</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/user/user-inmemory.repository.ts:15</a></div>
+                    <div class="io-line">Inherited from         <code><a href="../interfaces/User.html" target="_self" >UserRepository</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../interfaces/User.html#source" target="_self" >UserRepository:16</a></code>
+</div>
                 </td>
             </tr>
 
@@ -236,6 +217,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -279,10 +261,8 @@
                 <td class="col-md-4">
                     <a name="delete"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Async</span>
-                            delete
-                        </b>
+                        <span class="modifier">Async</span>
+                        <span ><b>delete</b></span>
                         <a href="#delete"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -290,15 +270,21 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>delete(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    <code>delete(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/user/user-inmemory.repository.ts:25</a></div>
+                    <div class="io-line">Inherited from         <code><a href="../interfaces/User.html" target="_self" >UserRepository</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../interfaces/User.html#source" target="_self" >UserRepository:26</a></code>
+</div>
                 </td>
             </tr>
 
@@ -308,6 +294,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -320,7 +307,7 @@
                                 <tr>
                                     <td>id</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
 
                                     <td>
@@ -351,10 +338,8 @@
                 <td class="col-md-4">
                     <a name="getAll"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Async</span>
-                            getAll
-                        </b>
+                        <span class="modifier">Async</span>
+                        <span ><b>getAll</b></span>
                         <a href="#getAll"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -369,8 +354,14 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/user/user-inmemory.repository.ts:29</a></div>
+                    <div class="io-line">Inherited from         <code><a href="../interfaces/User.html" target="_self" >UserRepository</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../interfaces/User.html#source" target="_self" >UserRepository:30</a></code>
+</div>
                 </td>
             </tr>
 
@@ -392,10 +383,8 @@
                 <td class="col-md-4">
                     <a name="getById"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Async</span>
-                            getById
-                        </b>
+                        <span class="modifier">Async</span>
+                        <span ><b>getById</b></span>
                         <a href="#getById"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -403,15 +392,21 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    <code>getById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="40"
-                            class="link-to-prism">src/user/user-inmemory.repository.ts:40</a></div>
+                    <div class="io-line">Inherited from         <code><a href="../interfaces/User.html" target="_self" >UserRepository</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../interfaces/User.html#source" target="_self" >UserRepository:56</a></code>
+</div>
                 </td>
             </tr>
 
@@ -421,6 +416,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -433,7 +429,7 @@
                                 <tr>
                                     <td>id</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
 
                                     <td>
@@ -464,10 +460,8 @@
                 <td class="col-md-4">
                     <a name="getByLogin"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Async</span>
-                            getByLogin
-                        </b>
+                        <span class="modifier">Async</span>
+                        <span ><b>getByLogin</b></span>
                         <a href="#getByLogin"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -482,8 +476,14 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="33"
-                            class="link-to-prism">src/user/user-inmemory.repository.ts:33</a></div>
+                    <div class="io-line">Inherited from         <code><a href="../interfaces/User.html" target="_self" >UserRepository</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../interfaces/User.html#source" target="_self" >UserRepository:44</a></code>
+</div>
                 </td>
             </tr>
 
@@ -493,6 +493,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -534,28 +535,32 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="update"></a>
+                    <a name="getPaged"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Async</span>
-                            update
-                        </b>
-                        <a href="#update"><span class="icon ion-ios-link"></span></a>
+                        <span class="modifier">Async</span>
+                        <span ><b>getPaged</b></span>
+                        <a href="#getPaged"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>update(user: <a href="../interfaces/User.html">User</a>)</code>
+                    <code>getPaged(paging: <a href="../interfaces/Paging.html" target="_self">Paging</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="44"
-                            class="link-to-prism">src/user/user-inmemory.repository.ts:44</a></div>
+                    <div class="io-line">Inherited from         <code><a href="../interfaces/User.html" target="_self" >UserRepository</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../interfaces/User.html#source" target="_self" >UserRepository:34</a></code>
+</div>
                 </td>
             </tr>
 
@@ -565,6 +570,84 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>paging</td>
+                                    <td>
+                                                <code><a href="../interfaces/Paging.html" target="_self" >Paging</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;ListResponse&lt;User&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="update"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>update</b></span>
+                        <a href="#update"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>update(user: <a href="../interfaces/User.html" target="_self">User</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../interfaces/User.html" target="_self" >UserRepository</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../interfaces/User.html#source" target="_self" >UserRepository:60</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -602,449 +685,6 @@
             </tr>
         </tbody>
     </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="create"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Abstract</span>
-                            <span class="modifier">Async</span>
-                            create
-                        </b>
-                        <a href="#create"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>create(user: <a href="../interfaces/User.html">Partial<User></a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Inherited from         <code><a href="../interfaces/User.html" target="_self" >UserRepository</a></code>
-</div>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../interfaces/User.html#source" target="_self" >UserRepository:4</a></code>
-</div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>user</td>
-                                    <td>
-                                                <code><a href="../interfaces/User.html" target="_self" >Partial&lt;User&gt;</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../interfaces/User.html" target="_self" >Promise&lt;User&gt;</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="delete"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Abstract</span>
-                            <span class="modifier">Async</span>
-                            delete
-                        </b>
-                        <a href="#delete"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>delete(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Inherited from         <code><a href="../interfaces/User.html" target="_self" >UserRepository</a></code>
-</div>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../interfaces/User.html#source" target="_self" >UserRepository:6</a></code>
-</div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>id</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getAll"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Abstract</span>
-                            <span class="modifier">Async</span>
-                            getAll
-                        </b>
-                        <a href="#getAll"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getAll()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Inherited from         <code><a href="../interfaces/User.html" target="_self" >UserRepository</a></code>
-</div>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../interfaces/User.html#source" target="_self" >UserRepository:7</a></code>
-</div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../interfaces/User.html" target="_self" >Promise&lt;User[]&gt;</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getById"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Abstract</span>
-                            <span class="modifier">Async</span>
-                            getById
-                        </b>
-                        <a href="#getById"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Inherited from         <code><a href="../interfaces/User.html" target="_self" >UserRepository</a></code>
-</div>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../interfaces/User.html#source" target="_self" >UserRepository:8</a></code>
-</div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>id</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../interfaces/User.html" target="_self" >Promise&lt;User&gt;</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getByLogin"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Abstract</span>
-                            <span class="modifier">Async</span>
-                            getByLogin
-                        </b>
-                        <a href="#getByLogin"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getByLogin(login: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Inherited from         <code><a href="../interfaces/User.html" target="_self" >UserRepository</a></code>
-</div>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../interfaces/User.html#source" target="_self" >UserRepository:9</a></code>
-</div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>login</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../interfaces/User.html" target="_self" >Promise&lt;User | undefined&gt;</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="update"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Abstract</span>
-                            <span class="modifier">Async</span>
-                            update
-                        </b>
-                        <a href="#update"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>update(user: <a href="../interfaces/User.html">Partial<User></a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Inherited from         <code><a href="../interfaces/User.html" target="_self" >UserRepository</a></code>
-</div>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../interfaces/User.html#source" target="_self" >UserRepository:5</a></code>
-</div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>user</td>
-                                    <td>
-                                                <code><a href="../interfaces/User.html" target="_self" >Partial&lt;User&gt;</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
 </section>
 
     </div>
@@ -1055,48 +695,64 @@
 import { UserRepository } from &#x27;./user.repository&#x27;;
 import { User } from &#x27;./user.interface&#x27;;
 import { InMemoryDBService } from &#x27;@nestjs-addons/in-memory-db&#x27;;
+import { ListResponse, Paging } from &#x27;../core/interfaces/paging&#x27;;
 
 @Injectable({
-  scope: Scope.DEFAULT,
+    scope: Scope.DEFAULT,
 })
 export class UserInMemoryRepository extends UserRepository {
-  constructor(private readonly service: InMemoryDBService&lt;User&gt;) {
-    super();
-    Logger.debug(&#x27;UserInMemoryRepository initialized&#x27;);
-  }
+    constructor(private readonly service: InMemoryDBService&lt;User&gt;) {
+        super();
+        Logger.debug(&#x27;UserInMemoryRepository initialized&#x27;);
+    }
 
-  async create(user: Partial&lt;User&gt;): Promise&lt;User&gt; {
-    return this.service.createAsync(user).toPromise()
-      .then(user &#x3D;&gt; {
-        Logger.debug(&#x27;user created&#x27;);
-        const users &#x3D; this.service.getAll();
-        Logger.debug(users);
-        return user;
-      });
-  }
+    async create(user: Partial&lt;User&gt;): Promise&lt;User&gt; {
+        return this.service
+            .createAsync(user)
+            .toPromise()
+            .then((user) &#x3D;&gt; {
+                Logger.debug(&#x27;user created&#x27;);
+                return user;
+            });
+    }
 
-  async delete(id: number): Promise&lt;void&gt; {
-    await this.service.deleteAsync(id);
-  }
+    async delete(id: string): Promise&lt;void&gt; {
+        await this.service.deleteAsync(id);
+    }
 
-  async getAll(): Promise&lt;User[]&gt; {
-    return this.service.getAllAsync().toPromise();
-  }
+    async getAll(): Promise&lt;User[]&gt; {
+        return this.service.getAllAsync().toPromise();
+    }
 
-  async getByLogin(login: string): Promise&lt;User | undefined&gt; {
-    return this.service.queryAsync(
-      x &#x3D;&gt; x.login.toLocaleLowerCase() &#x3D;&#x3D;&#x3D; login.toLocaleLowerCase())
-      .toPromise()
-      .then(result &#x3D;&gt; result &amp;&amp; result.length ? result[0] : undefined);
-  }
+    async getPaged(paging: Paging): Promise&lt;ListResponse&lt;User&gt;&gt; {
+        const startIndex &#x3D; paging.number * paging.size;
+        const allItems &#x3D; await this.service.getAllAsync().toPromise();
+        const itemsCount &#x3D; allItems.length;
+        return {
+            data: allItems.slice(startIndex, startIndex + paging.size),
+            itemsCount,
+        };
+    }
 
-  async getById(id: number): Promise&lt;User&gt; {
-    return this.service.getAsync(id).toPromise();
-  }
+    async getByLogin(login: string): Promise&lt;User | undefined&gt; {
+        return this.service
+            .queryAsync(
+                (x) &#x3D;&gt;
+                    x.login.toLocaleLowerCase() &#x3D;&#x3D;&#x3D; login.toLocaleLowerCase(),
+            )
+            .toPromise()
+            .then((result) &#x3D;&gt;
+                result &amp;&amp; result.length ? result[0] : undefined,
+            );
+    }
 
-  async update(user: User): Promise&lt;void&gt; {
-    return this.service.updateAsync(user).toPromise();
-  }
+    async getById(id: string): Promise&lt;User&gt; {
+        return this.service.getAsync(id).toPromise();
+    }
+
+    async update(user: User): Promise&lt;void&gt; {
+        return this.service.updateAsync(user).toPromise();
+    }
 }
 </code></pre>
     </div>
@@ -1109,14 +765,14 @@ export class UserInMemoryRepository extends UserRepository {
 
 
 
-                   
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -1128,6 +784,15 @@ export class UserInMemoryRepository extends UserRepository {
            </div>
        </div>
 
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
@@ -1137,9 +802,9 @@ export class UserInMemoryRepository extends UserRepository {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

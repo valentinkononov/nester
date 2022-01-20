@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
 
@@ -36,9 +37,10 @@
 
 
 
+
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li>AuthService</li>
+  <li >AuthService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -62,6 +64,7 @@
 
 
 
+
             <section>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
@@ -77,26 +80,26 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#getTokenPayload">getTokenPayload</a>
+                                <a href="#getTokenPayload" >getTokenPayload</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
                                     <span class="modifier">Async</span>
-                                <a href="#logIn">logIn</a>
+                                <a href="#logIn" >logIn</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
                                     <span class="modifier">Async</span>
-                                <a href="#signIn">signIn</a>
+                                <a href="#signIn" >signIn</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
                                     <span class="modifier">Async</span>
-                                <a href="#signUp">signUp</a>
+                                <a href="#signUp" >signUp</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#validateUser">validateUser</a>
+                                <a href="#validateUser" >validateUser</a>
                             </li>
                         </ul>
                     </td>
@@ -116,7 +119,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(userService: <a href="../injectables/UserService.html">UserService</a>, cryptoService: <a href="../injectables/CryptoService.html">CryptoService</a>, jwtService: JwtService)</code>
+<code>constructor(userService: <a href="../injectables/UserService.html" target="_self">UserService</a>, cryptoService: <a href="../injectables/CryptoService.html" target="_self">CryptoService</a>, jwtService: JwtService)</code>
                     </td>
                 </tr>
                         <tr>
@@ -194,10 +197,8 @@
                 <td class="col-md-4">
                     <a name="getTokenPayload"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            getTokenPayload
-                        </b>
+                        <span class="modifier">Private</span>
+                        <span ><b>getTokenPayload</b></span>
                         <a href="#getTokenPayload"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -205,7 +206,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getTokenPayload(user: <a href="../interfaces/User.html">User | UserDto</a>)</code>
+                    <code>getTokenPayload(user: <a href="../interfaces/User.html" target="_self">User | UserDto</a>)</code>
                 </td>
             </tr>
 
@@ -223,6 +224,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -266,11 +268,9 @@
                 <td class="col-md-4">
                     <a name="logIn"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            <span class="modifier">Async</span>
-                            logIn
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>logIn</b></span>
                         <a href="#logIn"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -278,15 +278,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>logIn(login, password)</code>
+                    <code>logIn(login: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, password: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="57"
-                            class="link-to-prism">src/auth/auth.service.ts:57</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="63"
+                            class="link-to-prism">src/auth/auth.service.ts:63</a></div>
                 </td>
             </tr>
 
@@ -296,16 +296,21 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
                                     <td>Name</td>
+                                    <td>Type</td>
                                     <td>Optional</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>login</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
 
                                     <td>
                                         No
@@ -315,6 +320,9 @@
                                 </tr>
                                 <tr>
                                     <td>password</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
 
                                     <td>
                                         No
@@ -328,7 +336,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>{}</code>
+                        <b>Returns : </b>        <code><a href="../interfaces/User.html" target="_self" >Promise&lt;User&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -344,11 +352,9 @@
                 <td class="col-md-4">
                     <a name="signIn"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            <span class="modifier">Async</span>
-                            signIn
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>signIn</b></span>
                         <a href="#signIn"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -356,15 +362,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>signIn(user)</code>
+                    <code>signIn(user: <a href="../interfaces/User.html" target="_self">User</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="47"
-                            class="link-to-prism">src/auth/auth.service.ts:47</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/auth/auth.service.ts:51</a></div>
                 </td>
             </tr>
 
@@ -374,16 +380,21 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
                                     <td>Name</td>
+                                    <td>Type</td>
                                     <td>Optional</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>user</td>
+                                    <td>
+                                                <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+                                    </td>
 
                                     <td>
                                         No
@@ -413,11 +424,9 @@
                 <td class="col-md-4">
                     <a name="signUp"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            <span class="modifier">Async</span>
-                            signUp
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span class="modifier">Async</span>
+                        <span ><b>signUp</b></span>
                         <a href="#signUp"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -425,7 +434,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>signUp(userDto: <a href="../classes/SignUp.html">SignUp</a>)</code>
+                    <code>signUp(userDto: <a href="../classes/SignUp.html" target="_self">SignUp</a>)</code>
                 </td>
             </tr>
 
@@ -443,6 +452,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -486,10 +496,8 @@
                 <td class="col-md-4">
                     <a name="validateUser"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Async</span>
-                            validateUser
-                        </b>
+                        <span class="modifier">Async</span>
+                        <span ><b>validateUser</b></span>
                         <a href="#validateUser"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -497,15 +505,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>validateUser(payload: <a href="../classes/Payload.html">Payload</a>)</code>
+                    <code>validateUser(payload: <a href="../classes/Payload.html" target="_self">Payload</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="52"
-                            class="link-to-prism">src/auth/auth.service.ts:52</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/auth/auth.service.ts:58</a></div>
                 </td>
             </tr>
 
@@ -515,6 +523,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -570,65 +579,76 @@ import { Utils } from &#x27;./utils&#x27;;
 
 @Injectable()
 export class AuthService {
-  constructor(
-    private readonly userService: UserService,
-    private readonly cryptoService: CryptoService,
-    private readonly jwtService: JwtService,
-  ) {}
+    constructor(
+        private readonly userService: UserService,
+        private readonly cryptoService: CryptoService,
+        private readonly jwtService: JwtService,
+    ) {}
 
-  private getTokenPayload(user: User | UserDto): Payload {
-    return new Payload(user.id, user.login, user.email, user.role);
-  }
+    private getTokenPayload(user: User | UserDto): Payload {
+        return new Payload(user.id, user.login, user.email, user.role);
+    }
 
-  public async signUp(userDto: SignUp): Promise&lt;Token&gt; {
-    return await this.userService.getByLogin(userDto.login)
-      .then(existingUser &#x3D;&gt; {
-        if (existingUser &amp;&amp; existingUser.id) {
-          throw new Error(&#x27;User with this email already exists&#x27;);
-        }
-        const password &#x3D; this.cryptoService.hashPassword(userDto.password);
-        const user &#x3D; {
-          email: userDto.email,
-          login: userDto.login,
-          password: password.hash,
-          salt: password.salt,
-          role: &#x27;user&#x27; as UserRole,
-        };
+    public async signUp(userDto: SignUp): Promise&lt;Token&gt; {
+        return await this.userService
+            .getByLogin(userDto.login)
+            .then((existingUser) &#x3D;&gt; {
+                if (existingUser &amp;&amp; existingUser.id) {
+                    throw new Error(&#x27;User with this email already exists&#x27;);
+                }
+                const password &#x3D; this.cryptoService.hashPassword(
+                    userDto.password,
+                );
+                const user &#x3D; {
+                    email: userDto.email,
+                    login: userDto.login,
+                    password: password.hash,
+                    salt: password.salt,
+                    role: &#x27;user&#x27; as UserRole,
+                };
 
-        return this.userService.create(user)
-          .then(newUser &#x3D;&gt; {
-            // const token &#x3D; this.jwtService.sign(JSON.stringify(this.getTokenPayload(newUser)));
-            const token &#x3D; this.jwtService.sign(JSON.stringify(this.getTokenPayload(newUser)));
-            return { token };
-          });
-      });
-  }
+                return this.userService.create(user).then((newUser) &#x3D;&gt; {
+                    // const token &#x3D; this.jwtService.sign(JSON.stringify(this.getTokenPayload(newUser)));
+                    const token &#x3D; this.jwtService.sign(
+                        JSON.stringify(this.getTokenPayload(newUser)),
+                    );
+                    return { token };
+                });
+            });
+    }
 
-  public async signIn(user): Promise&lt;Token&gt; {
-    const token &#x3D; this.jwtService.sign(JSON.stringify(this.getTokenPayload(user)));
-    return { token };
-  }
+    public async signIn(user: User): Promise&lt;Token&gt; {
+        const token &#x3D; this.jwtService.sign(
+            JSON.stringify(this.getTokenPayload(user)),
+        );
+        return { token };
+    }
 
-  async validateUser(payload: Payload): Promise&lt;User&gt; {
-    return await this.userService.getByLogin(payload.login);
-  }
+    async validateUser(payload: Payload): Promise&lt;User&gt; {
+        return await this.userService.getByLogin(payload.login);
+    }
 
-  // used in local auth strategy
-  public async logIn(login, password) {
-    Logger.debug(&#x27;login&#x27;)
-    return await this.userService.getByLogin(login)
-      .then( user &#x3D;&gt; {
-        Logger.debug(user)
-        if (user &amp;&amp; user.id) {
-          return this.cryptoService.checkPassword(user.password, user.salt, password)
-            ? Promise.resolve(user)
-            : Promise.reject(Utils.UnAuthorizedException);
-        } else {
-         return Promise.reject(Utils.UnAuthorizedException);
-        }
-      })
-      .catch(err &#x3D;&gt; Promise.reject(err));
-  }
+    // used in local auth strategy
+    public async logIn(login: string, password: string): Promise&lt;User&gt; {
+        Logger.debug(&#x27;login&#x27;);
+        return await this.userService
+            .getByLogin(login)
+            .then((user) &#x3D;&gt; {
+                Logger.debug(user);
+                if (user &amp;&amp; user.id) {
+                    return this.cryptoService.checkPassword(
+                        user.password,
+                        user.salt,
+                        password,
+                    )
+                        ? Promise.resolve(user)
+                        : Promise.reject(Utils.UnAuthorizedException);
+                } else {
+                    return Promise.reject(Utils.UnAuthorizedException);
+                }
+            })
+            .catch((err) &#x3D;&gt; Promise.reject(err));
+    }
 }
 </code></pre>
     </div>
@@ -641,14 +661,14 @@ export class AuthService {
 
 
 
-                   
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -660,6 +680,15 @@ export class AuthService {
            </div>
        </div>
 
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
@@ -669,9 +698,9 @@ export class AuthService {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

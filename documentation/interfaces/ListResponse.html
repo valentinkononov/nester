@@ -28,7 +28,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content injectable">
+               <div class="content interface">
                    <div class="content-data">
 
 
@@ -38,9 +38,16 @@
 
 
 
+
+
+
+
+
 <ol class="breadcrumb">
-  <li>Injectables</li>
-  <li >CustomMiddleware</li>
+  <li>Interfaces</li>
+  <li
+  >
+  ListResponse</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -58,164 +65,130 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/core/middleware/custom.middleware.ts</code>
+            <code>src/core/interfaces/paging.ts</code>
         </p>
 
 
 
 
+        <section>
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                        <a href="#data" 
+>
+                                            data
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#itemsCount" 
+>
+                                            itemsCount
+                                        </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
 
             <section>
-    <h3 id="index">Index</h3>
-    <table class="table table-sm table-bordered index-table">
-        <tbody>
-
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Methods</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#use" >use</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-
-
-
-
-
-        </tbody>
-    </table>
-</section>
-
-
-            <section>
-    
-    <h3 id="methods">
-        Methods
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="use"></a>
-                    <span class="name">
-                        <span ><b>use</b></span>
-                        <a href="#use"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>use(req: Request, res: Response, next: () => void)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="5"
-                            class="link-to-prism">src/core/middleware/custom.middleware.ts:5</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
                                 <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>req</td>
-                                    <td>
-                                            <code>Request</code>
+                                    <td class="col-md-4">
+                                        <a name="data"></a>
+                                        <span class="name "><b>data</b>
+                                            <a href="#data">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
                                 </tr>
                                 <tr>
-                                    <td>res</td>
-                                    <td>
-                                            <code>Response</code>
+                                    <td class="col-md-4">
+                                        <code>data:     <code>T[]</code>
+</code>
                                     </td>
+                                </tr>
 
-                                    <td>
-                                        No
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code>T[]</code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="itemsCount"></a>
+                                        <span class="name "><b>itemsCount</b>
+                                            <a href="#itemsCount">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
-
-
                                 </tr>
                                 <tr>
-                                    <td>next</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                    <td class="col-md-4">
+                                        <code>itemsCount:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
                                     </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
                                 </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>
 
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+            </section>
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable, Logger, NestMiddleware } from &#x27;@nestjs/common&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface Paging {
+    number: number;
+    size: number;
+}
 
-@Injectable()
-export class CustomMiddleware implements NestMiddleware {
-    use(req: Request, res: Response, next: () &#x3D;&gt; void): any {
-        Logger.debug(&#x27;Middleware&#x27;);
-        next();
-    }
+export interface ListResponse&lt;T&gt; {
+    data: T[];
+    itemsCount: number;
 }
 </code></pre>
     </div>
-
 </div>
-
-
-
-
-
 
 
 
@@ -248,8 +221,8 @@ export class CustomMiddleware implements NestMiddleware {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'CustomMiddleware.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'ListResponse.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

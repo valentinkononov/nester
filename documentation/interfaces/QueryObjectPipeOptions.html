@@ -47,7 +47,7 @@
   <li>Interfaces</li>
   <li
   >
-  User</li>
+  QueryObjectPipeOptions</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -65,17 +65,11 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/user/user.interface.ts</code>
+            <code>src/core/pipes/query-object.pipe.ts</code>
         </p>
 
 
 
-            <p class="comment">
-                <h3>Extends</h3>
-            </p>
-            <p class="comment">
-                    <code>InMemoryDBEntity</code>
-            </p>
 
         <section>
             <h3 id="index">Index</h3>
@@ -90,35 +84,17 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#email" 
+                                            <span class="modifier">Optional</span>
+                                        <a href="#defaultValue" 
 >
-                                            email
-                                        </a>
-                                </li>
-                                <li>
-                                        <a href="#login" 
->
-                                            login
+                                            defaultValue
                                         </a>
                                 </li>
                                 <li>
                                             <span class="modifier">Optional</span>
-                                        <a href="#password" 
+                                        <a href="#isArray" 
 >
-                                            password
-                                        </a>
-                                </li>
-                                <li>
-                                        <a href="#role" 
->
-                                            role
-                                        </a>
-                                </li>
-                                <li>
-                                            <span class="modifier">Optional</span>
-                                        <a href="#salt" 
->
-                                            salt
+                                            isArray
                                         </a>
                                 </li>
                             </ul>
@@ -136,9 +112,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="email"></a>
-                                        <span class="name "><b>email</b>
-                                            <a href="#email">
+                                        <a name="defaultValue"></a>
+                                        <span class="name "><b>defaultValue</b>
+                                            <a href="#defaultValue">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -146,7 +122,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>email:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>defaultValue:     <code>V</code>
 </code>
                                     </td>
                                 </tr>
@@ -154,73 +130,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="login"></a>
-                                        <span class="name "><b>login</b>
-                                            <a href="#login">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>login:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="password"></a>
-                                        <span class="name "><b>password</b>
-                                            <a href="#password">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>password:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            <i>Type : </i>    <code>V</code>
 
                                         </td>
                                     </tr>
@@ -240,9 +150,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="role"></a>
-                                        <span class="name "><b>role</b>
-                                            <a href="#role">
+                                        <a name="isArray"></a>
+                                        <span class="name "><b>isArray</b>
+                                            <a href="#isArray">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -250,7 +160,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>role:         <code><a href="../interfaces/User.html" target="_self" >UserRole</a></code>
+                                        <code>isArray:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -258,40 +168,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../interfaces/User.html" target="_self" >UserRole</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="salt"></a>
-                                        <span class="name "><b>salt</b>
-                                            <a href="#salt">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>salt:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
                                         </td>
                                     </tr>
@@ -312,40 +189,31 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ApiProperty } from &#x27;@nestjs/swagger&#x27;;
-import { InMemoryDBEntity } from &#x27;@nestjs-addons/in-memory-db&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable, PipeTransform, Logger } from &#x27;@nestjs/common&#x27;;
 
-/*
- * User role can be &#x27;admin&#x27; or &#x27;user&#x27;
- */
-export type UserRole &#x3D; &#x27;admin&#x27; | &#x27;user&#x27;;
-
-/*
- * Base User entity, stored in InMemoryDB
- */
-export interface User extends InMemoryDBEntity {
-    password?: string;
-    salt?: string;
-    login: string;
-    email: string;
-    role: UserRole;
+export interface QueryObjectPipeOptions&lt;V&gt; {
+    isArray?: boolean;
+    defaultValue?: V;
 }
 
-/*
- * User class for Swagger usage - duplicates features of User interface
- * Need until new version of nest/swagger is released
- */
-export class UserDto {
-    id: string;
+@Injectable()
+export class QueryObjectPipe&lt;V&gt; implements PipeTransform&lt;string&gt; {
+    constructor(private options: QueryObjectPipeOptions&lt;V&gt; &#x3D; {}) {}
 
-    @ApiProperty()
-    login: string;
-
-    @ApiProperty()
-    email: string;
-
-    @ApiProperty()
-    role: UserRole;
+    transform(value: string): any {
+        try {
+            if (value) {
+                return JSON.parse(value);
+            } else if (this.options.defaultValue !&#x3D;&#x3D; undefined) {
+                return this.options.defaultValue;
+            } else {
+                return this.options.isArray ? [] : {};
+            }
+        } catch (err) {
+            Logger.error(err.message);
+            return this.options.isArray ? [] : {};
+        }
+    }
 }
 </code></pre>
     </div>
@@ -383,7 +251,7 @@ export class UserDto {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
-            var COMPODOC_CURRENT_PAGE_URL = 'User.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'QueryObjectPipeOptions.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
