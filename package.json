@@ -22,6 +22,11 @@
     "docs": "typedoc --out docs src",
     "compodoc": "npx compodoc -p tsconfig.json -s"
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint"
+    }
+  },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,html,md,less,json}": [
       "prettier --write"
