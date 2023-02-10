@@ -9,7 +9,6 @@ import {
     Logger,
     UsePipes,
     UseInterceptors,
-    UseFilters,
     Query,
 } from '@nestjs/common';
 import { UserService } from './user.service';
@@ -21,7 +20,6 @@ import { Role } from '../core/guards/role.decorator';
 import { RoleGuard } from '../core/guards/role.guard';
 import { LogPipe } from '../core/pipes/log.pipe';
 import { PerformanceInterceptor } from '../core/interceptors/performance.interceptor';
-import { CustomExceptionFilter } from '../core/filters/custom-exception.filter';
 import { ListResponse, Paging } from '../core/interfaces/paging';
 import { QueryObjectPipe } from '../core/pipes/query-object.pipe';
 
@@ -54,7 +52,6 @@ export class UserController {
     @Role('user')
     @UseGuards(RoleGuard)
     @UseInterceptors(new PerformanceInterceptor('getById'))
-    @UseFilters(new CustomExceptionFilter())
     @Get(':id')
     async getById(@Param() id: string): Promise<UserDto> {
         Logger.debug('getById called');

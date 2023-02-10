@@ -1,4 +1,4 @@
-import { NestApplication, NestFactory } from '@nestjs/core';
+import { HttpAdapterHost, NestApplication, NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import compression from 'compression';
@@ -31,15 +31,16 @@ async function bootstrap(): Promise<void> {
     // turn on global validation
     app.useGlobalPipes(new ValidationPipe());
 
-    app.useGlobalFilters(new CustomExceptionFilter());
+    const httpAdapter = app.get(HttpAdapterHost);
+    app.useGlobalFilters(new CustomExceptionFilter(httpAdapter));
 
-    app.use(compression());
     app.use(bodyParser.json({ limit: '1mb' }));
 
     initSwagger(app);
     app.use(compression());
 
-    await app.listen(Number(config.api.port));
+    await app.listen(+config.api.port);
+
     Logger.debug(
         `Open api health check at: localhost:${config.api.port}/health/status or swagger at: localhost:${config.api.port}/swagger`,
     );
